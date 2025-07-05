@@ -1,0 +1,121 @@
+
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, Home, Building, User, Phone } from "lucide-react";
+
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const navigation = [
+    { name: "Home", href: "/", icon: Home },
+    { name: "Empreendimentos", href: "/empreendimentos", icon: Building },
+    { name: "Sobre", href: "/sobre", icon: User },
+    { name: "Contato", href: "/contato", icon: Phone },
+  ];
+
+  const isActive = (href: string) => {
+    if (href === "/") return location.pathname === "/";
+    return location.pathname.startsWith(href);
+  };
+
+  return (
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-emerald-600 to-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">RS</span>
+            </div>
+            <div>
+              <div className="font-bold text-slate-800 text-lg">Rafael Silva</div>
+              <div className="text-xs text-slate-600">Corretor de Imóveis</div>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`flex items-center space-x-1 px-3 py-2 rounded-md transition-colors ${
+                  isActive(item.href)
+                    ? "text-emerald-600 bg-emerald-50"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                }`}
+              >
+                <item.icon className="h-4 w-4" />
+                <span className="font-medium">{item.name}</span>
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden md:flex items-center space-x-4">
+            <Button variant="outline" size="sm">
+              (11) 99999-9999
+            </Button>
+            <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700">
+              Fale Comigo
+            </Button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="sm">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-72">
+              <div className="flex flex-col h-full">
+                <div className="flex items-center space-x-2 pb-6 border-b">
+                  <div className="w-8 h-8 bg-gradient-to-br from-emerald-600 to-blue-600 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold">RS</span>
+                  </div>
+                  <div>
+                    <div className="font-bold text-slate-800">Rafael Silva</div>
+                    <div className="text-xs text-slate-600">Corretor</div>
+                  </div>
+                </div>
+                
+                <nav className="flex-1 py-6">
+                  <div className="space-y-2">
+                    {navigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
+                          isActive(item.href)
+                            ? "text-emerald-600 bg-emerald-50"
+                            : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                        }`}
+                      >
+                        <item.icon className="h-5 w-5" />
+                        <span className="font-medium">{item.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </nav>
+
+                <div className="space-y-3 pt-6 border-t">
+                  <Button variant="outline" className="w-full">
+                    (11) 99999-9999
+                  </Button>
+                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
+                    Fale Comigo
+                  </Button>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
