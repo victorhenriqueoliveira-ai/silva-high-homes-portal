@@ -91,7 +91,7 @@ const Contato = () => {
                       <Input
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
-                        placeholder="(11) 99999-9999"
+                        placeholder="(11) 97151-1943"
                       />
                     </div>
                     <div>
@@ -151,7 +151,7 @@ const Contato = () => {
                     <div className="flex items-center">
                       <Phone className="h-5 w-5 text-emerald-600 mr-3" />
                       <div>
-                        <div className="font-medium">(11) 99999-9999</div>
+                        <div className="font-medium">(11) 97151-1943</div>
                         <div className="text-sm text-slate-500">Ligações e WhatsApp</div>
                       </div>
                     </div>
@@ -251,10 +251,6 @@ const Contato = () => {
               {
                 question: "Como funciona o processo de compra?",
                 answer: "O processo inclui análise do perfil, busca de imóveis, visitas, negociação, documentação e acompanhamento até a entrega das chaves."
-              },
-              {
-                question: "Qual é o valor da comissão?",
-                answer: "A comissão varia de acordo com o tipo e valor do imóvel. Trabalho sempre com transparência total nos valores."
               },
               {
                 question: "Oferecem consultoria de investimento?",

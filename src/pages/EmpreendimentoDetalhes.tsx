@@ -190,7 +190,7 @@ const EmpreendimentoDetalhes = () => {
                 <div className="space-y-3">
                   <Button className="w-full" variant="outline">
                     <Phone className="h-4 w-4 mr-2" />
-                    (11) 99999-9999
+                    (11) 97151-1943
                   </Button>
                   <Button className="w-full" variant="outline">
                     <Mail className="h-4 w-4 mr-2" />
