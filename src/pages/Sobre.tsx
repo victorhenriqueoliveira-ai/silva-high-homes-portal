@@ -11,15 +11,15 @@ const Sobre = () => {
     { icon: Award, title: "Top Performer", description: "Melhor corretor do ano em 2023" },
     { icon: Users, title: "300+ Clientes", description: "Famílias satisfeitas atendidas" },
     { icon: TrendingUp, title: "R$ 50M+", description: "Em vendas realizadas" },
-    { icon: Heart, title: "98% Satisfação", description: "Taxa de clientes satisfeitos" }
+    { icon: Heart, title: "100% Satisfação", description: "Taxa de clientes satisfeitos" }
   ];
 
   const timeline = [
-    { year: "2009", title: "Início da Carreira", description: "Primeiros passos no mercado imobiliário" },
-    { year: "2012", title: "Especialização", description: "Foco em empreendimentos de alto padrão" },
-    { year: "2015", title: "Reconhecimento", description: "Primeiro prêmio de excelência em vendas" },
-    { year: "2018", title: "Expansão", description: "Ampliação para novos mercados premium" },
-    { year: "2021", title: "Líder de Mercado", description: "Consolidação como referência no segmento" },
+    { year: "2019", title: "Início da Carreira", description: "Primeiros passos no mercado imobiliário" },
+    { year: "2020", title: "Especialização", description: "Foco em empreendimentos de alto padrão" },
+    { year: "2021", title: "Reconhecimento", description: "Primeiro prêmio de excelência em vendas" },
+    { year: "2022", title: "Expansão", description: "Ampliação para novos mercados premium" },
+    { year: "2023", title: "Líder de Mercado", description: "Consolidação como referência no segmento" },
     { year: "2024", title: "Inovação", description: "Implementação de tecnologias avançadas" }
   ];
 
@@ -39,14 +39,14 @@ const Sobre = () => {
                 Corretor de Imóveis Especializado • CRECI: 123.456-SP
               </div>
               <p className="text-lg md:text-xl leading-relaxed mb-8">
-                Mais de 15 anos dedicados ao mercado imobiliário de alto padrão, conectando pessoas aos seus sonhos e investidores às melhores oportunidades.
+                Mais de 6 anos dedicados ao mercado imobiliário de alto padrão, conectando pessoas aos seus sonhos e investidores às melhores oportunidades.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-white text-slate-800 hover:bg-slate-100">
+                <Button size="lg" className="bg-white hover:bg-gray-300 text-slate-800">
                   <Phone className="mr-2 h-5 w-5" />
                   Fale Comigo
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-800">
+                <Button size="lg" variant="outline" className="border-white text-primary hover:bg-gray-300 hover:text-slate-800">
                   <Mail className="mr-2 h-5 w-5" />
                   Email
                 </Button>
@@ -171,7 +171,7 @@ const Sobre = () => {
               Trajetória Profissional
             </h2>
             <p className="text-lg text-slate-600">
-              15 anos de evolução e conquistas no mercado imobiliário
+              6 anos de evolução e conquistas no mercado imobiliário
             </p>
           </div>
           
@@ -213,11 +213,11 @@ const Sobre = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700">
               <Phone className="mr-2 h-5 w-5" />
-              (11) 99999-9999
+              (11) 97151-1943
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
+            <Button size="lg" variant="outline" className="border-white text-primary hover:bg-gray-300 hover:text-slate-900">
               <Mail className="mr-2 h-5 w-5" />
-              rafael@email.com
+              rafael.silva@email.com
             </Button>
           </div>
         </div>

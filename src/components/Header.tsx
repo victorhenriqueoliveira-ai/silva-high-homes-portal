@@ -55,9 +55,12 @@ const Header = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="outline" size="sm">
-              (11) 99999-9999
+              (11) 97151-1943
             </Button>
             <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700">
+              <Link to="/contato">
+                <Phone className="mr-2 h-4 w-4" />
+              </Link>
               Fale Comigo
             </Button>
           </div>
@@ -103,10 +106,13 @@ const Header = () => {
 
                 <div className="space-y-3 pt-6 border-t">
                   <Button variant="outline" className="w-full">
-                    (11) 99999-9999
+                    (11) 97151-1943
                   </Button>
                   <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
+                    <Phone className="mr-2 h-4 w-4" />
+                    <Link to="/contato">
                     Fale Comigo
+                    </Link>
                   </Button>
                 </div>
               </div>

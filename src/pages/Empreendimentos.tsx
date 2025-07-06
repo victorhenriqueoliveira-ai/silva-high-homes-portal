@@ -18,7 +18,7 @@ const Empreendimentos = () => {
   const developments = [
     {
       id: 1,
-      title: "Empreendimento Premium Centro",
+      title: "Empreendimento Centro",
       location: "Centro - São Paulo",
       type: "Residencial",
       units: "120 unidades",
@@ -29,7 +29,7 @@ const Empreendimentos = () => {
     },
     {
       id: 2,
-      title: "Residencial Elite Gardens",
+      title: "Residencial Gardens",
       location: "Jardins - São Paulo",
       type: "Residencial",
       units: "80 unidades",
@@ -40,7 +40,7 @@ const Empreendimentos = () => {
     },
     {
       id: 3,
-      title: "Corporate Plaza Executive",
+      title: "Corporate Executive",
       location: "Vila Olímpia - São Paulo",
       type: "Comercial",
       units: "200 salas",
@@ -51,7 +51,7 @@ const Empreendimentos = () => {
     },
     {
       id: 4,
-      title: "Luxury Residence Morumbi",
+      title: "Residence Morumbi",
       location: "Morumbi - São Paulo",
       type: "Residencial",
       units: "60 unidades",

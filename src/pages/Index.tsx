@@ -11,7 +11,7 @@ const Index = () => {
   const featuredDevelopments = [
     {
       id: 1,
-      title: "Empreendimento Premium Centro",
+      title: "Empreendimento Centro",
       location: "Centro - São Paulo",
       type: "Residencial",
       units: "120 unidades",
@@ -62,15 +62,19 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 text-lg">
-              Ver Empreendimentos
+              <Link to="/empreendimentos">
+                Ver Empreendimentos
+              </Link>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-slate-800 px-8 py-4 text-lg"
+              className="border-white text-primary hover:bg-gray-300 hover:text-slate-800 px-8 py-4 text-lg"
             >
+              <Link to="/contato">
               Fale Comigo
+              </Link>
             </Button>
           </div>
         </div>
@@ -83,7 +87,7 @@ const Index = () => {
             {[
               { icon: Home, number: "500+", label: "Imóveis Vendidos" },
               { icon: Users, number: "300+", label: "Clientes Satisfeitos" },
-              { icon: Star, number: "15+", label: "Anos de Experiência" },
+              { icon: Star, number: "6+", label: "Anos de Experiência" },
               { icon: Award, number: "50+", label: "Empreendimentos" }
             ].map((stat, index) => (
               <div key={index} className="text-center">
@@ -176,7 +180,7 @@ const Index = () => {
                 Especialista em Imóveis de Alto Padrão
               </h2>
               <p className="text-lg text-slate-300 mb-6">
-                Com mais de 15 anos de experiência no mercado imobiliário, Rafael Silva é referência em empreendimentos de luxo em São Paulo. Especializado em conectar investidores e compradores aos melhores projetos da cidade.
+                Com grande experiência no mercado imobiliário, Rafael Silva é referência em empreendimentos de alto em São Paulo. Especializado em conectar investidores e compradores aos melhores projetos da cidade.
               </p>
               <div className="space-y-4">
                 {[
