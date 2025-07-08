@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Home, Building, User, Phone } from "lucide-react";
@@ -8,17 +8,36 @@ import { Menu, Home, Building, User, Phone } from "lucide-react";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
     { name: "Empreendimentos", href: "/empreendimentos", icon: Building },
     { name: "Sobre", href: "/sobre", icon: User },
-    { name: "Contato", href: "/contato", icon: Phone },
   ];
 
   const isActive = (href: string) => {
     if (href === "/") return location.pathname === "/";
     return location.pathname.startsWith(href);
+  };
+
+  const handleContactClick = () => {
+    if (location.pathname === "/") {
+      // Se já estamos na home, apenas rola para o formulário
+      const contactSection = document.querySelector('#contact-form');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Se não estamos na home, navega para lá e depois rola
+      navigate("/");
+      setTimeout(() => {
+        const contactSection = document.querySelector('#contact-form');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
   };
 
   return (
@@ -54,6 +73,13 @@ const Header = () => {
                 <span className="font-medium">{item.name}</span>
               </Link>
             ))}
+            <button
+              onClick={handleContactClick}
+              className="flex items-center space-x-1 px-3 py-2 rounded-md transition-colors text-sm xl:text-base text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+            >
+              <Phone className="h-4 w-4" />
+              <span className="font-medium">Contato</span>
+            </button>
           </nav>
 
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
@@ -61,12 +87,14 @@ const Header = () => {
               <span className="hidden sm:inline">(11) 97151-1943</span>
               <span className="sm:hidden">Ligar</span>
             </Button>
-            <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-xs sm:text-sm px-2 sm:px-4">
-              <Link to="/contato" className="flex items-center">
-                <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                <span className="hidden sm:inline">Fale Comigo</span>
-                <span className="sm:hidden">Contato</span>
-              </Link>
+            <Button 
+              size="sm" 
+              className="bg-emerald-600 hover:bg-emerald-700 text-xs sm:text-sm px-2 sm:px-4"
+              onClick={handleContactClick}
+            >
+              <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+              <span className="hidden sm:inline">Fale Comigo</span>
+              <span className="sm:hidden">Contato</span>
             </Button>
           </div>
 
@@ -106,6 +134,16 @@ const Header = () => {
                         <span className="font-medium">{item.name}</span>
                       </Link>
                     ))}
+                    <button
+                      onClick={() => {
+                        setIsOpen(false);
+                        handleContactClick();
+                      }}
+                      className="flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors text-slate-600 hover:text-slate-900 hover:bg-slate-50 w-full text-left"
+                    >
+                      <Phone className="h-5 w-5" />
+                      <span className="font-medium">Contato</span>
+                    </button>
                   </div>
                 </nav>
 
@@ -113,11 +151,15 @@ const Header = () => {
                   <Button variant="outline" className="w-full">
                     (11) 97151-1943
                   </Button>
-                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
+                  <Button 
+                    className="w-full bg-emerald-600 hover:bg-emerald-700"
+                    onClick={() => {
+                      setIsOpen(false);
+                      handleContactClick();
+                    }}
+                  >
                     <Phone className="mr-2 h-4 w-4" />
-                    <Link to="/contato" onClick={() => setIsOpen(false)}>
-                      Fale Comigo
-                    </Link>
+                    Fale Comigo
                   </Button>
                 </div>
               </div>
