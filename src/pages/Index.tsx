@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Home, Star, Users, Award } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
   const featuredDevelopments = [
@@ -214,6 +214,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Contact Form Section */}
+      <ContactForm />
 
       <Footer />
     </div>
