@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award, Users, TrendingUp, Heart, Phone, Mail } from "lucide-react";
+import { Award, Users, TrendingUp, Heart, Phone, Mail, Box, Circle, Square } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -28,14 +28,33 @@ const Sobre = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 bg-gradient-to-r from-primary via-[#C69755] to-[#EFC283] text-white overflow-hidden">
+        {/* 3D Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="hero-3d-background absolute top-10 left-10 opacity-10">
+            <Box className="h-20 w-20 text-white" />
+          </div>
+          <div className="hero-3d-background absolute top-32 right-20 opacity-10" style={{animationDelay: '3s'}}>
+            <Circle className="h-16 w-16 text-white" />
+          </div>
+          <div className="hero-3d-background absolute bottom-20 left-1/4 opacity-10" style={{animationDelay: '6s'}}>
+            <Square className="h-24 w-24 text-white" />
+          </div>
+          <div className="hero-3d-background absolute top-1/3 right-1/3 opacity-10" style={{animationDelay: '9s'}}>
+            <Box className="h-12 w-12 text-white" />
+          </div>
+          <div className="hero-3d-background absolute bottom-1/3 right-10 opacity-10" style={{animationDelay: '12s'}}>
+            <Circle className="h-18 w-18 text-white" />
+          </div>
+        </div>
+        
+        <div className="relative container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Rafael Silva
               </h1>
-              <div className="text-xl md:text-2xl text-emerald-200 mb-6">
+              <div className="text-xl md:text-2xl text-[#EFC283] mb-6">
                 Corretor de Imóveis Especializado • CRECI: 123.456-SP
               </div>
               <p className="text-lg md:text-xl leading-relaxed mb-8">
@@ -46,7 +65,7 @@ const Sobre = () => {
                   <Phone className="mr-2 h-5 w-5" />
                   Fale Comigo
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-primary hover:bg-gray-300 hover:text-slate-800">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-800">
                   <Mail className="mr-2 h-5 w-5" />
                   Email
                 </Button>
@@ -82,7 +101,7 @@ const Sobre = () => {
             {achievements.map((achievement, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow border-0 shadow-md">
                 <CardContent className="pt-8 pb-6">
-                  <achievement.icon className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
+                  <achievement.icon className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="font-bold text-lg mb-2">{achievement.title}</h3>
                   <p className="text-slate-600 text-sm">{achievement.description}</p>
                 </CardContent>
@@ -93,8 +112,21 @@ const Sobre = () => {
       </section>
 
       {/* Story */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 overflow-hidden">
+        {/* 3D Background Elements for Story Section */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="hero-3d-background absolute top-16 left-20 opacity-5">
+            <Box className="h-16 w-16 text-primary" />
+          </div>
+          <div className="hero-3d-background absolute bottom-20 right-16 opacity-5" style={{animationDelay: '4s'}}>
+            <Circle className="h-20 w-20 text-primary" />
+          </div>
+          <div className="hero-3d-background absolute top-1/2 left-1/3 opacity-5" style={{animationDelay: '8s'}}>
+            <Square className="h-14 w-14 text-primary" />
+          </div>
+        </div>
+        
+        <div className="relative container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
@@ -117,7 +149,7 @@ const Sobre = () => {
               <Card className="border-0 shadow-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Award className="h-5 w-5 text-emerald-600 mr-2" />
+                    <Award className="h-5 w-5 text-primary mr-2" />
                     Certificações e Especializações
                   </CardTitle>
                 </CardHeader>
@@ -151,7 +183,7 @@ const Sobre = () => {
                       "Relacionamento duradouro com clientes"
                     ].map((point, index) => (
                       <div key={index} className="flex items-center">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
                         <span className="text-slate-600">{point}</span>
                       </div>
                     ))}
@@ -164,8 +196,21 @@ const Sobre = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 bg-white overflow-hidden">
+        {/* 3D Background Elements for Timeline Section */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="hero-3d-background absolute top-10 right-10 opacity-5">
+            <Square className="h-18 w-18 text-primary" />
+          </div>
+          <div className="hero-3d-background absolute bottom-16 left-24 opacity-5" style={{animationDelay: '5s'}}>
+            <Box className="h-22 w-22 text-primary" />
+          </div>
+          <div className="hero-3d-background absolute top-1/3 right-1/4 opacity-5" style={{animationDelay: '10s'}}>
+            <Circle className="h-16 w-16 text-primary" />
+          </div>
+        </div>
+        
+        <div className="relative container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               Trajetória Profissional
@@ -177,7 +222,7 @@ const Sobre = () => {
           
           <div className="max-w-4xl mx-auto">
             <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-emerald-200"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#EFC283]"></div>
               
               {timeline.map((item, index) => (
                 <div key={index} className={`relative flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
@@ -185,7 +230,7 @@ const Sobre = () => {
                     <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
                         <div className="flex items-center mb-3">
-                          <Badge className="bg-emerald-600 text-white mr-3">{item.year}</Badge>
+                          <Badge className="bg-primary text-white mr-3">{item.year}</Badge>
                           <h3 className="font-bold text-lg">{item.title}</h3>
                         </div>
                         <p className="text-slate-600">{item.description}</p>
@@ -193,7 +238,7 @@ const Sobre = () => {
                     </Card>
                   </div>
                   
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-emerald-600 rounded-full border-4 border-white shadow-md"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-md"></div>
                 </div>
               ))}
             </div>
@@ -211,11 +256,11 @@ const Sobre = () => {
             Estou sempre disponível para discutir oportunidades únicas e ajudar você a tomar a melhor decisão imobiliária.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700">
+            <Button size="lg" className="bg-primary hover:bg-[#C69755]">
               <Phone className="mr-2 h-5 w-5" />
               (11) 97151-1943
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-primary hover:bg-gray-300 hover:text-slate-900">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
               <Mail className="mr-2 h-5 w-5" />
               rafael.silva@email.com
             </Button>

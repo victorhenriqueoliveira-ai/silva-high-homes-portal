@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-600 to-blue-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-[#C69755] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">RS</span>
               </div>
               <div>
@@ -36,7 +36,7 @@ const Footer = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block text-slate-400 hover:text-emerald-400 transition-colors text-sm"
+                  className="block text-slate-400 hover:text-[#C69755] transition-colors text-sm"
                 >
                   {item.name}
                 </Link>
@@ -49,15 +49,15 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Contato</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm">
-                <Phone className="h-4 w-4 text-emerald-400" />
+                <Phone className="h-4 w-4 text-[#C69755]" />
                 <span className="text-slate-400">(11) 99999-9999</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
-                <Mail className="h-4 w-4 text-emerald-400" />
+                <Mail className="h-4 w-4 text-[#C69755]" />
                 <span className="text-slate-400">rafael@email.com</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
-                <MapPin className="h-4 w-4 text-emerald-400" />
+                <MapPin className="h-4 w-4 text-[#C69755]" />
                 <span className="text-slate-400">São Paulo - SP</span>
               </div>
             </div>
@@ -75,7 +75,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition-colors"
+                  className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
