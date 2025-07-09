@@ -1,9 +1,8 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Home, Star, Users, Award, Cube, Hexagon, Triangle } from "lucide-react";
+import { ArrowRight, Home, Star, Users, Award, Box, Circle, Square } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
@@ -14,7 +13,7 @@ const Index = () => {
       id: 1,
       title: "Empreendimento Centro",
       location: "Centro - São Paulo",
-      type: "Residencial",
+      type: "Residencial", 
       units: "120 unidades",
       status: "Lançamento",
       description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada.",
@@ -25,7 +24,7 @@ const Index = () => {
       title: "Residencial Elite Gardens",
       location: "Jardins - São Paulo",
       type: "Residencial",
-      units: "80 unidades",
+      units: "80 unidades", 
       status: "Em Construção",
       description: "Torres residenciais com conceito sustentável e design contemporâneo.",
       features: ["2-3 dormitórios", "Terraço privativo", "1-2 vagas", "Spa e fitness"]
@@ -36,7 +35,7 @@ const Index = () => {
       location: "Vila Olímpia - São Paulo",
       type: "Comercial",
       units: "200 salas",
-      status: "Pré-lançamento",
+      status: "Pré-lançamento", 
       description: "Complexo comercial moderno com tecnologia de ponta e facilidades corporativas.",
       features: ["Salas 40-200m²", "Coworking", "Heliponto", "Concierge 24h"]
     }
@@ -48,25 +47,25 @@ const Index = () => {
       
       {/* Hero Section with 3D Background */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-[hsl(35_47%_47%)] to-[hsl(43_61%_74%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-[#C69755] to-[#EFC283]"></div>
         <div className="absolute inset-0 bg-black/20"></div>
         
         {/* 3D Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="hero-3d-background absolute top-10 left-10 opacity-10">
-            <Cube className="h-20 w-20 text-white" />
+            <Box className="h-20 w-20 text-white" />
           </div>
           <div className="hero-3d-background absolute top-32 right-20 opacity-10" style={{animationDelay: '3s'}}>
-            <Hexagon className="h-16 w-16 text-white" />
+            <Circle className="h-16 w-16 text-white" />
           </div>
           <div className="hero-3d-background absolute bottom-20 left-1/4 opacity-10" style={{animationDelay: '6s'}}>
-            <Triangle className="h-24 w-24 text-white" />
+            <Square className="h-24 w-24 text-white" />
           </div>
           <div className="hero-3d-background absolute top-1/3 right-1/3 opacity-10" style={{animationDelay: '9s'}}>
-            <Cube className="h-12 w-12 text-white" />
+            <Box className="h-12 w-12 text-white" />
           </div>
           <div className="hero-3d-background absolute bottom-1/3 right-10 opacity-10" style={{animationDelay: '12s'}}>
-            <Hexagon className="h-18 w-18 text-white" />
+            <Circle className="h-18 w-18 text-white" />
           </div>
         </div>
         
@@ -137,10 +136,10 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {featuredDevelopments.map((dev) => (
               <Card key={dev.id} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-0 shadow-lg group">
-                <div className="h-40 sm:h-48 relative bg-gradient-to-r from-primary to-[hsl(35_47%_60%)]">
+                <div className="h-40 sm:h-48 relative bg-gradient-to-r from-primary to-[#C69755]">
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
-                    <Badge className="bg-[hsl(43_61_74%)] text-primary text-xs border-0">{dev.status}</Badge>
+                    <Badge className="bg-[#EFC283] text-primary text-xs border-0">{dev.status}</Badge>
                   </div>
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
                     <h3 className="text-lg sm:text-xl font-bold">{dev.title}</h3>
@@ -212,12 +211,12 @@ const Index = () => {
                   "Relacionamento duradouro e transparente"
                 ].map((item, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full mr-2 sm:mr-3 flex-shrink-0 bg-[hsl(35_47%_60%)]"></div>
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full mr-2 sm:mr-3 flex-shrink-0 bg-[#C69755]"></div>
                     <span className="text-sm sm:text-base text-slate-200">{item}</span>
                   </div>
                 ))}
               </div>
-              <Button size="lg" className="mt-6 sm:mt-8 w-full sm:w-auto bg-[hsl(35_47%_60%)] hover:bg-[hsl(35_47%_50%)] text-white border-0" asChild>
+              <Button size="lg" className="mt-6 sm:mt-8 w-full sm:w-auto bg-[#C69755] hover:bg-[#B0813E] text-white border-0" asChild>
                 <Link to="/sobre">
                   Conheça Minha História
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -226,7 +225,7 @@ const Index = () => {
             </div>
             
             <div className="relative order-first lg:order-last">
-              <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg shadow-2xl bg-gradient-to-r from-primary to-[hsl(35_47%_60%)]"></div>
+              <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg shadow-2xl bg-gradient-to-r from-primary to-[#C69755]"></div>
               <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
               <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6">
                 <div className="text-xl sm:text-2xl font-bold">Rafael Silva</div>
