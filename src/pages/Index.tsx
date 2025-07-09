@@ -70,7 +70,7 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-slate-800 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
+              className="border-white text-primary hover:bg-gray-300 hover:text-slate-800 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
             >
               <Link to="/contato">
                 Fale Comigo
