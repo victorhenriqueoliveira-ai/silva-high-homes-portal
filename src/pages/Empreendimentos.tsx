@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Search, Filter, ArrowRight, MapPin, Building } from "lucide-react";
+import { Search, Filter, ArrowRight, MapPin, Building, Box, Circle, Square } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -98,17 +98,39 @@ const Empreendimentos = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-emerald-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Empreendimentos Exclusivos
-          </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-            Descubra os melhores investimentos imobiliários de São Paulo, cuidadosamente selecionados para você
-          </p>
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-[#C69755] to-[#EFC283]"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
+        
+        {/* 3D Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="hero-3d-background absolute top-10 left-10 opacity-10">
+            <Box className="h-20 w-20 text-white" />
+          </div>
+          <div className="hero-3d-background absolute top-32 right-20 opacity-10" style={{animationDelay: '3s'}}>
+            <Circle className="h-16 w-16 text-white" />
+          </div>
+          <div className="hero-3d-background absolute bottom-20 left-1/4 opacity-10" style={{animationDelay: '6s'}}>
+            <Square className="h-24 w-24 text-white" />
+          </div>
+          <div className="hero-3d-background absolute top-1/3 right-1/3 opacity-10" style={{animationDelay: '9s'}}>
+            <Box className="h-12 w-12 text-white" />
+          </div>
+          <div className="hero-3d-background absolute bottom-1/3 right-10 opacity-10" style={{animationDelay: '12s'}}>
+            <Circle className="h-18 w-18 text-white" />
+          </div>
+        </div>
+        <div className="relative container mx-auto text-center text-white">
+          <div className="hero-3d-element">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+              Empreendimentos Exclusivos
+              <span className="block text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl font-light text-white/90 mt-2">
+              Descubra os melhores investimentos imobiliários de São Paulo, cuidadosamente selecionados para você
+              </span>
+            </h1>
+          </div>
         </div>
       </section>
-
       {/* Filters Section */}
       <section className="py-8 bg-white border-b">
         <div className="container mx-auto px-4">
@@ -168,10 +190,10 @@ const Empreendimentos = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredDevelopments.map((dev) => (
               <Card key={dev.id} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-0 shadow-lg group">
-                <div className="h-48 bg-gradient-to-br from-emerald-400 to-blue-600 relative">
+                <div className="h-48 bg-primary relative">
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-amber-500 text-white">{dev.status}</Badge>
+                    <Badge className="bg-slate-500 text-white">{dev.status}</Badge>
                   </div>
                   <div className="absolute top-4 left-4">
                     <Badge variant="secondary">{dev.type}</Badge>
@@ -193,7 +215,7 @@ const Empreendimentos = () => {
                     <Building className="h-4 w-4 mr-1" />
                     {dev.units}
                   </div>
-                  <div className="text-lg font-bold text-emerald-600">
+                  <div className="text-lg font-bold text-primary">
                     {dev.priceRange}
                   </div>
                 </CardHeader>
@@ -213,7 +235,7 @@ const Empreendimentos = () => {
                       )}
                     </div>
                     <Button 
-                      className="w-full group-hover:bg-emerald-600 transition-colors"
+                      className="w-full group-hover:bg-primary transition-colors"
                       asChild
                     >
                       <Link to={`/empreendimento/${dev.id}`}>

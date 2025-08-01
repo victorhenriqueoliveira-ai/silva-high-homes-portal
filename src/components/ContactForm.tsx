@@ -117,7 +117,7 @@ const ContactForm = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-emerald-600 hover:bg-emerald-700">
+                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-muted-400">
                   Enviar Mensagem
                 </Button>
               </form>
@@ -130,17 +130,17 @@ const ContactForm = () => {
             <Card className="border-0 shadow-lg">
               <CardContent className="p-4 sm:p-6">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary from-emerald-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-white font-bold text-xl sm:text-2xl">RS</span>
                   </div>
-                  <h3 className="font-bold text-lg sm:text-xl">Rafael Silva</h3>
+                  <h3 className="font-bold text-lg sm:text-xl">Ralph Santos</h3>
                   <p className="text-slate-600 text-sm sm:text-base">Corretor de Imóveis</p>
                   <p className="text-xs sm:text-sm text-slate-500">CRECI: 123.456-SP</p>
                 </div>
                 
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center">
-                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-600 mr-3 flex-shrink-0" />
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-3 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-sm sm:text-base">(11) 97151-1943</div>
                       <div className="text-xs sm:text-sm text-slate-500">Ligações e WhatsApp</div>
@@ -148,7 +148,7 @@ const ContactForm = () => {
                   </div>
                   
                   <div className="flex items-center">
-                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-600 mr-3 flex-shrink-0" />
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-3 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-sm sm:text-base">rafael@email.com</div>
                       <div className="text-xs sm:text-sm text-slate-500">Email principal</div>
@@ -164,7 +164,7 @@ const ContactForm = () => {
                 <CardTitle className="text-lg sm:text-xl">Contato Rápido</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 pt-0">
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white text-sm">
+                <Button className="w-full bg-primary hover:bg-muted-200 text-white text-sm">
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp
                 </Button>
