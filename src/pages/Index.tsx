@@ -72,7 +72,7 @@ const Index = () => {
         <div className="relative container mx-auto text-center text-white">
           <div className="hero-3d-element">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-              Rafael Silva
+              Ralph Santos
               <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-white/90 mt-2">
                 Corretor de Imóveis Especializado
               </span>
@@ -91,7 +91,7 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
+              className="border-white text-primary hover:bg-muted hover:text-primary px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
             >
               <a href="#contact" className="scroll-smooth">
                 Fale Comigo

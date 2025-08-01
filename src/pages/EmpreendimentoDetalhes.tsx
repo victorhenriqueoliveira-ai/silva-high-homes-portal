@@ -67,7 +67,7 @@ const EmpreendimentoDetalhes = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Image Placeholder */}
             <div className="space-y-4">
-              <div className="h-96 bg-gradient-to-br from-emerald-400 to-blue-600 rounded-lg relative overflow-hidden">
+              <div className="h-96 bg-primary from-emerald-400 to-blue-600 rounded-lg relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20"></div>
                 <div className="absolute top-6 left-6">
                   <Badge className="bg-amber-500 text-white mb-2">{development.status}</Badge>
@@ -99,7 +99,7 @@ const EmpreendimentoDetalhes = () => {
                   </div>
                 </div>
                 
-                <div className="text-3xl font-bold text-emerald-600 mb-4">
+                <div className="text-3xl font-bold text-primary mb-4">
                   {development.priceRange}
                 </div>
                 
@@ -127,7 +127,7 @@ const EmpreendimentoDetalhes = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button size="lg" className="flex-1 bg-emerald-600 hover:bg-emerald-700">
+                  <Button size="lg" className="flex-1 bg-primary hover:bg-muted-500">
                     <Phone className="h-4 w-4 mr-2" />
                     Ligar Agora
                   </Button>
@@ -160,7 +160,7 @@ const EmpreendimentoDetalhes = () => {
                         <div className="text-slate-600">{plan.area}</div>
                       </div>
                       <div className="text-right">
-                        <div className="font-bold text-emerald-600">{plan.price}</div>
+                        <div className="font-bold text-primary">{plan.price}</div>
                         <Button size="sm" variant="outline" className="mt-2">
                           Ver Planta
                         </Button>
@@ -178,10 +178,10 @@ const EmpreendimentoDetalhes = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-white font-bold text-xl">RS</span>
                   </div>
-                  <div className="font-semibold">Rafael Silva</div>
+                  <div className="font-semibold">Ralph Santos</div>
                   <div className="text-sm text-slate-600">CRECI: 123.456-SP</div>
                 </div>
                 
@@ -196,7 +196,7 @@ const EmpreendimentoDetalhes = () => {
                     <Mail className="h-4 w-4 mr-2" />
                     rafael@email.com
                   </Button>
-                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                  <Button className="w-full bg-primary hover:bg-muted-700 text-white">
                     <MessageCircle className="h-4 w-4 mr-2" />
                     WhatsApp
                   </Button>
@@ -221,7 +221,7 @@ const EmpreendimentoDetalhes = () => {
             {development.amenities.map((amenity, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
-                  <amenity.icon className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
+                  <amenity.icon className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">{amenity.name}</h3>
                   <p className="text-sm text-slate-600">{amenity.description}</p>
                 </CardContent>
@@ -250,14 +250,14 @@ const EmpreendimentoDetalhes = () => {
                   "Universidade - 15 min"
                 ].map((point, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
                     <span className="text-slate-600">{point}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="h-80 bg-gradient-to-br from-emerald-100 to-blue-100 rounded-lg flex items-center justify-center">
+            <div className="h-80 bg-muted rounded-lg flex items-center justify-center">
               <div className="text-slate-500">Mapa da Localização</div>
             </div>
           </div>
