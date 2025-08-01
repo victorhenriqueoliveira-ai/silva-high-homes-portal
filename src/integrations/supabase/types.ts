@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leads: {
+        Row: {
+          created_at: string
+          email: string
+          empreendimento: string | null
+          id: string
+          message: string | null
+          name: string
+          page_url: string | null
+          phone: string | null
+          source: string
+          subject: string | null
+          trello_card_id: string | null
+          trello_synced: boolean | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          empreendimento?: string | null
+          id?: string
+          message?: string | null
+          name: string
+          page_url?: string | null
+          phone?: string | null
+          source?: string
+          subject?: string | null
+          trello_card_id?: string | null
+          trello_synced?: boolean | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          empreendimento?: string | null
+          id?: string
+          message?: string | null
+          name?: string
+          page_url?: string | null
+          phone?: string | null
+          source?: string
+          subject?: string | null
+          trello_card_id?: string | null
+          trello_synced?: boolean | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
