@@ -50,11 +50,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm">
                 <Phone className="h-4 w-4 text-[#C69755]" />
-                <span className="text-slate-400">(11) 99999-9999</span>
+                <span className="text-slate-400">(11) 97151-1943</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="h-4 w-4 text-[#C69755]" />
-                <span className="text-slate-400">rafael@email.com</span>
+                <span className="text-slate-400">rafaelsdossantos.silva@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="h-4 w-4 text-[#C69755]" />
@@ -68,7 +68,7 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Redes Sociais</h3>
             <div className="flex space-x-4">
               {[
-                { icon: Instagram, href: "#", label: "Instagram" },
+                { icon: Instagram, href: "https://www.instagram.com/ralph_corretor", label: "Instagram" },
                 { icon: Linkedin, href: "#", label: "LinkedIn" },
                 { icon: MessageCircle, href: "#", label: "WhatsApp" },
               ].map((social, index) => (
@@ -77,6 +77,7 @@ const Footer = () => {
                   href={social.href}
                   className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
                   aria-label={social.label}
+                  target="_blank"
                 >
                   <social.icon className="h-5 w-5" />
                 </a>

@@ -181,10 +181,10 @@ const Empreendimentos = () => {
             <h2 className="text-2xl font-bold text-slate-800">
               {filteredDevelopments.length} empreendimento{filteredDevelopments.length !== 1 ? 's' : ''} encontrado{filteredDevelopments.length !== 1 ? 's' : ''}
             </h2>
-            <Button variant="outline" size="sm">
+            {/* <Button variant="outline" size="sm">
               <Filter className="h-4 w-4 mr-2" />
               Filtros Avançados
-            </Button>
+            </Button> */}
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
