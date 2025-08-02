@@ -169,10 +169,6 @@ const ContactForm = () => {
                   WhatsApp
                 </Button>
                 <Button className="w-full text-sm" variant="outline">
-                  <Phone className="h-4 w-4 mr-2" />
-                  Ligar Agora
-                </Button>
-                <Button className="w-full text-sm" variant="outline">
                   <Mail className="h-4 w-4 mr-2" />
                   Enviar Email
                 </Button>
