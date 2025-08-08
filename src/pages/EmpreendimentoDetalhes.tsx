@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, MapPin, Building, Calendar, Phone, Mail, MessageCircle, Star, Shield, Car, Dumbbell } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LeadForm from "@/components/LeadForm";
 
 const EmpreendimentoDetalhes = () => {
   const { id } = useParams();
@@ -171,43 +172,48 @@ const EmpreendimentoDetalhes = () => {
               </CardContent>
             </Card>
 
-            {/* Contact Card */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Fale com Rafael Silva</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-white font-bold text-xl">RS</span>
+            {/* Contato e Formulário */}
+            <div className="space-y-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Fale com Rafael Silva</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold text-xl">RS</span>
+                    </div>
+                    <div className="font-semibold">Ralph Santos</div>
+                    <div className="text-sm text-slate-600">CRECI: 123.456-SP</div>
                   </div>
-                  <div className="font-semibold">Ralph Santos</div>
-                  <div className="text-sm text-slate-600">CRECI: 123.456-SP</div>
-                </div>
-                
-                <Separator />
-                
-                <div className="space-y-3">
-                  <Button className="w-full" variant="outline">
-                    <Phone className="h-4 w-4 mr-2" />
-                    (11) 97151-1943
-                  </Button>
-                  <Button className="w-full" variant="outline">
-                    <Mail className="h-4 w-4 mr-2" />
-                    rafael@email.com
-                  </Button>
-                  <Button className="w-full bg-primary hover:bg-muted-700 text-white">
-                    <MessageCircle className="h-4 w-4 mr-2" />
-                    WhatsApp
-                  </Button>
-                </div>
-                
-                <div className="text-xs text-slate-500 text-center">
-                  Atendimento de segunda a sábado<br />
-                  das 9h às 18h
-                </div>
-              </CardContent>
-            </Card>
+                  
+                  <Separator />
+                  
+                  <div className="space-y-3">
+                    <Button className="w-full" variant="outline">
+                      <Phone className="h-4 w-4 mr-2" />
+                      (11) 97151-1943
+                    </Button>
+                    <Button className="w-full" variant="outline">
+                      <Mail className="h-4 w-4 mr-2" />
+                      rafael@email.com
+                    </Button>
+                    <Button className="w-full bg-primary hover:bg-muted-700 text-white">
+                      <MessageCircle className="h-4 w-4 mr-2" />
+                      WhatsApp
+                    </Button>
+                  </div>
+                  
+                  <div className="text-xs text-slate-500 text-center">
+                    Atendimento de segunda a sábado<br />
+                    das 9h às 18h
+                  </div>
+                </CardContent>
+              </Card>
+
+              <LeadForm empreendimento={development.title} />
+            </div>
+
           </div>
         </div>
       </section>
