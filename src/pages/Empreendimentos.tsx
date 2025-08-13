@@ -6,91 +6,22 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Search, Filter, ArrowRight, MapPin, Building, Box, Circle, Square } from "lucide-react";
+import { Search, ArrowRight, MapPin, Building, Box, Circle, Square } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { empreendimentos } from "./Mockups";
 
 const Empreendimentos = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterType, setFilterType] = useState("all");
   const [filterStatus, setFilterStatus] = useState("all");
 
-  const developments = [
-    {
-      id: 1,
-      title: "Empreendimento Centro",
-      location: "Centro - São Paulo",
-      type: "Residencial",
-      units: "120 unidades",
-      status: "Lançamento",
-      description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada no coração da cidade.",
-      features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
-      priceRange: "R$ 800.000 - R$ 1.200.000"
-    },
-    {
-      id: 2,
-      title: "Residencial Gardens",
-      location: "Jardins - São Paulo",
-      type: "Residencial",
-      units: "80 unidades",
-      status: "Em Construção",
-      description: "Torres residenciais com conceito sustentável e design contemporâneo em um dos bairros mais nobres.",
-      features: ["2-3 dormitórios", "Terraço privativo", "1-2 vagas", "Spa e fitness"],
-      priceRange: "R$ 1.000.000 - R$ 1.800.000"
-    },
-    {
-      id: 3,
-      title: "Corporate Executive",
-      location: "Vila Olímpia - São Paulo",
-      type: "Comercial",
-      units: "200 salas",
-      status: "Pré-lançamento",
-      description: "Complexo comercial moderno com tecnologia de ponta e facilidades corporativas de última geração.",
-      features: ["Salas 40-200m²", "Coworking", "Heliponto", "Concierge 24h"],
-      priceRange: "R$ 300.000 - R$ 2.500.000"
-    },
-    {
-      id: 4,
-      title: "Residence Morumbi",
-      location: "Morumbi - São Paulo",
-      type: "Residencial",
-      units: "60 unidades",
-      status: "Lançamento",
-      description: "Apartamentos de luxo com vista panorâmica e acabamentos importados em condomínio exclusivo.",
-      features: ["4-5 dormitórios", "Master suite", "3-4 vagas", "Adega privativa"],
-      priceRange: "R$ 1.500.000 - R$ 3.000.000"
-    },
-    {
-      id: 5,
-      title: "Smart Office Faria Lima",
-      location: "Faria Lima - São Paulo",
-      type: "Comercial",
-      units: "150 salas",
-      status: "Em Construção",
-      description: "Edifício inteligente com certificação sustentável na principal avenida corporativa de São Paulo.",
-      features: ["Salas 30-300m²", "Automação total", "Terraço corporativo", "Estacionamento robótico"],
-      priceRange: "R$ 250.000 - R$ 3.500.000"
-    },
-    {
-      id: 6,
-      title: "Green Living Pinheiros",
-      location: "Pinheiros - São Paulo",
-      type: "Residencial",
-      units: "100 unidades",
-      status: "Entregue",
-      description: "Condomínio sustentável com conceito biofílico e soluções ecológicas inovadoras.",
-      features: ["2-4 dormitórios", "Jardim vertical", "2 vagas", "Horta comunitária"],
-      priceRange: "R$ 700.000 - R$ 1.400.000"
-    }
-  ];
 
-  const filteredDevelopments = developments.filter(dev => {
+  const filteredDevelopments = empreendimentos.filter(dev => {
     const matchesSearch = dev.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         dev.location.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesType = filterType === "all" || dev.type === filterType;
+    dev.location.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = filterStatus === "all" || dev.status === filterStatus;
     
-    return matchesSearch && matchesType && matchesStatus;
+    return matchesSearch && matchesStatus;
   });
 
   return (
@@ -146,24 +77,12 @@ const Empreendimentos = () => {
             </div>
             
             <div className="flex gap-4">
-              <Select value={filterType} onValueChange={setFilterType}>
-                <SelectTrigger className="w-40">
-                  <SelectValue placeholder="Tipo" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Todos os tipos</SelectItem>
-                  <SelectItem value="Residencial">Residencial</SelectItem>
-                  <SelectItem value="Comercial">Comercial</SelectItem>
-                </SelectContent>
-              </Select>
-
               <Select value={filterStatus} onValueChange={setFilterStatus}>
                 <SelectTrigger className="w-40">
                   <SelectValue placeholder="Status" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Todos status</SelectItem>
-                  <SelectItem value="Pré-lançamento">Pré-lançamento</SelectItem>
                   <SelectItem value="Lançamento">Lançamento</SelectItem>
                   <SelectItem value="Em Construção">Em Construção</SelectItem>
                   <SelectItem value="Entregue">Entregue</SelectItem>
@@ -191,7 +110,8 @@ const Empreendimentos = () => {
             {filteredDevelopments.map((dev) => (
               <Card key={dev.id} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-0 shadow-lg group">
                 <div className="h-48 bg-primary relative">
-                  <div className="absolute inset-0 bg-black/20"></div>
+                  <div className="absolute inset-0 bg-black/50"></div>
+                  <img src={dev.fachada} alt={dev.title} className="w-full h-full object-cover" />
                   <div className="absolute top-4 right-4">
                     <Badge className="bg-slate-500 text-white">{dev.status}</Badge>
                   </div>
@@ -238,7 +158,7 @@ const Empreendimentos = () => {
                       className="w-full group-hover:bg-primary transition-colors"
                       asChild
                     >
-                      <Link to={`/empreendimento/${dev.id}`}>
+                      <Link to={`/empreendimento/${dev.slug}`}>
                         Ver Detalhes
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -258,7 +178,6 @@ const Empreendimentos = () => {
                 variant="outline" 
                 onClick={() => {
                   setSearchTerm("");
-                  setFilterType("all");
                   setFilterStatus("all");
                 }}
               >

@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Award, Users, TrendingUp, Heart, Phone, Mail, Box, Circle, Square } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
+import fotoRafael from "../../public/logotipo/foto_rafael_horizontal.png";
 const Sobre = () => {
   const achievements = [
     { icon: Award, title: "Top Performer", description: "Melhor corretor do ano em 2023" },
@@ -55,7 +55,7 @@ const Sobre = () => {
                 Rafael Silva
               </h1>
               <div className="text-xl md:text-2xl text-[#EFC283] mb-6">
-                Corretor de Imóveis Especializado • CRECI: 123.456-SP
+                Corretor de Imóveis Especializado • CRECI - 270870 - F
               </div>
               <p className="text-lg md:text-xl leading-relaxed mb-8">
                 Mais de 6 anos dedicados ao mercado imobiliário de alto padrão, conectando pessoas aos seus sonhos e investidores às melhores oportunidades.
@@ -75,10 +75,7 @@ const Sobre = () => {
             <div className="relative">
               <div className="w-full h-96 bg-gradient-to-br from-white/20 to-white/10 rounded-2xl backdrop-blur-sm border border-white/20"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white/80">
-                  <div className="text-6xl font-bold mb-2">RS</div>
-                  <div className="text-lg">Rafael Silva</div>
-                </div>
+                <img src={fotoRafael} alt="Rafael Silva" className="w-full h-full object-cover rounded-2xl" />
               </div>
             </div>
           </div>
