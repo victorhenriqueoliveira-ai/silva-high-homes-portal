@@ -6,40 +6,22 @@ import { ArrowRight, Home, Star, Users, Award, Box, Circle, Square } from "lucid
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import fotoRafael from "../../public/logotipo/foto_rafael_horizontal.png";
+import { empreendimentos } from "./Mockups";
 
 const Index = () => {
-  const featuredDevelopments = [
-    {
-      id: 1,
-      title: "Empreendimento Centro",
-      location: "Centro - São Paulo",
-      type: "Residencial", 
-      units: "120 unidades",
-      status: "Lançamento",
-      description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada.",
-      features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"]
-    },
-    {
-      id: 2,
-      title: "Residencial Elite Gardens",
-      location: "Jardins - São Paulo",
-      type: "Residencial",
-      units: "80 unidades", 
-      status: "Em Construção",
-      description: "Torres residenciais com conceito sustentável e design contemporâneo.",
-      features: ["2-3 dormitórios", "Terraço privativo", "1-2 vagas", "Spa e fitness"]
-    },
-    {
-      id: 3,
-      title: "Corporate Plaza Executive",
-      location: "Vila Olímpia - São Paulo",
-      type: "Comercial",
-      units: "200 salas",
-      status: "Pré-lançamento", 
-      description: "Complexo comercial moderno com tecnologia de ponta e facilidades corporativas.",
-      features: ["Salas 40-200m²", "Coworking", "Heliponto", "Concierge 24h"]
-    }
-  ];
+  const featuredEmDestaque = empreendimentos.slice(0, 3).map((dev, index) => ({
+    id: index,
+    slug: dev.slug,
+    fachada: dev.fachada,
+    title: dev.title,
+    location: dev.location,
+    type: dev.type,
+    units: dev.units,
+    status: dev.status,
+    description: dev.description,
+    features: dev.features,
+  }));
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-accent to-muted">
@@ -88,7 +70,7 @@ const Index = () => {
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
             </Button>
-            <Button 
+            {/* <Button 
               size="lg" 
               variant="outline" 
               className="border-white text-primary hover:bg-muted hover:text-primary px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
@@ -96,7 +78,7 @@ const Index = () => {
               <a href="#contact" className="scroll-smooth">
                 Fale Comigo
               </a>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>
@@ -134,12 +116,17 @@ const Index = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {featuredDevelopments.map((dev) => (
+            {featuredEmDestaque.map((dev) => (
               <Card key={dev.id} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-0 shadow-lg group">
-                <div className="h-40 sm:h-48 relative bg-gradient-to-r from-primary to-[#C69755]">
+                <div className="h-40 sm:h-48 relative">
+                  <div className="absolute inset-0 bg-black/50"></div>
+                  <img src={dev.fachada} alt={dev.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
                     <Badge className="bg-[#EFC283] text-primary text-xs border-0">{dev.status}</Badge>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge variant="secondary">{dev.type}</Badge>
                   </div>
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
                     <h3 className="text-lg sm:text-xl font-bold">{dev.title}</h3>
@@ -170,7 +157,7 @@ const Index = () => {
                       className="w-full hover:bg-primary/90 transition-colors text-sm bg-primary text-white"
                       asChild
                     >
-                      <Link to={`/empreendimento/${dev.id}`}>
+                      <Link to={`/empreendimento/${dev.slug}`}>
                         Ver Detalhes
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -225,11 +212,12 @@ const Index = () => {
             </div>
             
             <div className="relative order-first lg:order-last">
-              <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg shadow-2xl bg-gradient-to-r from-primary to-[#C69755]"></div>
-              <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
+              {/* <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg shadow-2xl bg-gradient-to-r from-primary to-[#C69755]"></div>
+              <div className="absolute inset-0 bg-black/20 rounded-lg"></div> */}
+              <img src={fotoRafael} alt="Rafael Silva" className="w-full h-full object-cover rounded-2xl" />
               <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6">
-                <div className="text-xl sm:text-2xl font-bold">Rafael Silva</div>
-                <div className="text-sm sm:text-base text-white/80">CRECI: 123.456-SP</div>
+                <h3 className="text-primary text-xl sm:text-2xl font-bold">Rafael Silva</h3>
+                <h3 className="text-[#9e7a51] text-sm sm:text-base text-white/80">CRECI - 270870 - F</h3>
               </div>
             </div>
           </div>

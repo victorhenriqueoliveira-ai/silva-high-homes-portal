@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,48 +7,29 @@ import { ArrowLeft, MapPin, Building, Calendar, Phone, Mail, MessageCircle, Star
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
+import { empreendimentos } from "./Mockups";
+import ImageModal from "@/components/organisms/modals";
+import fachada from "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg"
 
 const EmpreendimentoDetalhes = () => {
-  const { id } = useParams();
+  const { title } = useParams();
 
-  // Mock data - in a real app, this would come from an API
-  const development = {
-    id: parseInt(id || "1"),
-    title: "Empreendimento Premium Centro",
-    location: "Centro - São Paulo",
-    type: "Residencial",
-    units: "120 unidades",
-    status: "Lançamento",
-    description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada no coração da cidade. Este empreendimento representa o que há de mais moderno em arquitetura residencial, oferecendo uma experiência única de moradia urbana.",
-    features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
-    priceRange: "R$ 800.000 - R$ 1.200.000",
-    deliveryDate: "Dezembro 2025",
-    developer: "Construtora Premium SP",
-    address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
-    details: {
-      area: "85m² a 140m²",
-      floors: "25 andares",
-      unitsPerFloor: "4 a 6 unidades",
-      parking: "2 a 3 vagas por unidade"
-    },
-    amenities: [
-      { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
-      { icon: Car, name: "Valet parking", description: "Serviço de manobrista 24h" },
-      { icon: Shield, name: "Segurança 24h", description: "Portaria e monitoramento integral" },
-      { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
-    ],
-    floorPlans: [
-      { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-      { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-      { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
-    ]
-  };
+  const empreendimentoSelecionado = empreendimentos.find(
+    e => e.slug === title
+  );
+
+  if (!empreendimentoSelecionado) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-xl text-red-600">Empreendimento não encontrado.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Header />
-      
-      {/* Breadcrumb */}
+
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center space-x-2 text-sm">
@@ -57,7 +37,7 @@ const EmpreendimentoDetalhes = () => {
             <span className="text-slate-400">•</span>
             <Link to="/empreendimentos" className="text-slate-500 hover:text-slate-700">Empreendimentos</Link>
             <span className="text-slate-400">•</span>
-            <span className="text-slate-800 font-medium">{development.title}</span>
+            <span className="text-slate-800 font-medium">{empreendimentoSelecionado.title}</span>
           </div>
         </div>
       </div>
@@ -70,14 +50,15 @@ const EmpreendimentoDetalhes = () => {
             <div className="space-y-4">
               <div className="h-96 bg-primary from-emerald-400 to-blue-600 rounded-lg relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20"></div>
+                <img src={empreendimentoSelecionado.fachada} alt={empreendimentoSelecionado.title} className="w-full h-full object-cover" />
                 <div className="absolute top-6 left-6">
-                  <Badge className="bg-amber-500 text-white mb-2">{development.status}</Badge>
-                  <h1 className="text-white text-3xl font-bold">{development.title}</h1>
+                  <Badge className="bg-amber-500 text-white mb-2">{empreendimentoSelecionado.status}</Badge>
+                  <h1 className="text-white text-3xl font-bold">{empreendimentoSelecionado.title}</h1>
                 </div>
                 <div className="absolute bottom-6 left-6 text-white">
                   <div className="flex items-center text-lg">
                     <MapPin className="h-5 w-5 mr-2" />
-                    {development.location}
+                    {empreendimentoSelecionado.location}
                   </div>
                 </div>
               </div>
@@ -93,39 +74,42 @@ const EmpreendimentoDetalhes = () => {
             <div className="space-y-6">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <Badge variant="secondary">{development.type}</Badge>
+                  <Badge variant="secondary">{empreendimentoSelecionado.type}</Badge>
                   <div className="flex items-center text-slate-600">
                     <Building className="h-4 w-4 mr-1" />
-                    {development.units}
+                    {empreendimentoSelecionado.units}
                   </div>
                 </div>
                 
                 <div className="text-3xl font-bold text-primary mb-4">
-                  {development.priceRange}
+                  {empreendimentoSelecionado.priceRange}
                 </div>
                 
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  {development.description}
+                  {empreendimentoSelecionado.description}
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <div className="text-sm text-slate-500">Área</div>
-                    <div className="font-semibold">{development.details.area}</div>
+                {/* Aqui cheque se details existem para evitar erro */}
+                {empreendimentoSelecionado.details && (
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <div className="text-sm text-slate-500">Área</div>
+                      <div className="font-semibold">{empreendimentoSelecionado.details.area}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-slate-500">Entrega</div>
+                      <div className="font-semibold">{empreendimentoSelecionado.deliveryDate || 'A definir'}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-slate-500">Andares</div>
+                      <div className="font-semibold">{empreendimentoSelecionado.details.floors}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-slate-500">Vagas</div>
+                      <div className="font-semibold">{empreendimentoSelecionado.details.parking}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-sm text-slate-500">Entrega</div>
-                    <div className="font-semibold">{development.deliveryDate}</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-slate-500">Andares</div>
-                    <div className="font-semibold">{development.details.floors}</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-slate-500">Vagas</div>
-                    <div className="font-semibold">{development.details.parking}</div>
-                  </div>
-                </div>
+                )}
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button size="lg" className="flex-1 bg-primary hover:bg-muted-500">
@@ -154,7 +138,7 @@ const EmpreendimentoDetalhes = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {development.floorPlans.map((plan, index) => (
+                  {empreendimentoSelecionado.floorPlans?.map((plan, index) => (
                     <div key={index} className="flex justify-between items-center p-4 border rounded-lg hover:bg-slate-50 transition-colors">
                       <div>
                         <div className="font-semibold">{plan.type}</div>
@@ -162,9 +146,7 @@ const EmpreendimentoDetalhes = () => {
                       </div>
                       <div className="text-right">
                         <div className="font-bold text-primary">{plan.price}</div>
-                        <Button size="sm" variant="outline" className="mt-2">
-                          Ver Planta
-                        </Button>
+                        <ImageModal imageUrl={plan.plantaImg} />
                       </div>
                     </div>
                   ))}
@@ -184,7 +166,7 @@ const EmpreendimentoDetalhes = () => {
                       <span className="text-white font-bold text-xl">RS</span>
                     </div>
                     <div className="font-semibold">Ralph Santos</div>
-                    <div className="text-sm text-slate-600">CRECI: 123.456-SP</div>
+                    <div className="text-sm text-slate-600">CRECI - 270870 - F</div>
                   </div>
                   
                   <Separator />
@@ -211,7 +193,7 @@ const EmpreendimentoDetalhes = () => {
                 </CardContent>
               </Card>
 
-              <LeadForm empreendimento={development.title} />
+              <LeadForm empreendimento={empreendimentoSelecionado.title} />
             </div>
 
           </div>
@@ -224,7 +206,7 @@ const EmpreendimentoDetalhes = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Lazer e Comodidades</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {development.amenities.map((amenity, index) => (
+            {empreendimentoSelecionado.amenities?.map((amenity, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
                   <amenity.icon className="h-12 w-12 text-primary mx-auto mb-4" />
@@ -245,7 +227,7 @@ const EmpreendimentoDetalhes = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-xl font-semibold mb-4">Endereço</h3>
-              <p className="text-slate-600 mb-6">{development.address}</p>
+              <p className="text-slate-600 mb-6">{empreendimentoSelecionado.address}</p>
               
               <h3 className="text-xl font-semibold mb-4">Pontos de Interesse</h3>
               <div className="space-y-2">

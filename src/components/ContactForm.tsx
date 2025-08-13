@@ -135,7 +135,7 @@ const ContactForm = () => {
                   </div>
                   <h3 className="font-bold text-lg sm:text-xl">Ralph Santos</h3>
                   <p className="text-slate-600 text-sm sm:text-base">Corretor de Imóveis</p>
-                  <p className="text-xs sm:text-sm text-slate-500">CRECI: 123.456-SP</p>
+                  <p className="text-xs sm:text-sm text-slate-500">CRECI - 270870 - F</p>
                 </div>
                 
                 <div className="space-y-3 sm:space-y-4">

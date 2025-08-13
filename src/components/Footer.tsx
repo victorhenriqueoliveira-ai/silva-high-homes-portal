@@ -15,7 +15,7 @@ const Footer = () => {
               </div>
               <div>
                 <div className="font-bold text-lg">Rafael Silva</div>
-                <div className="text-sm text-slate-400">CRECI: 123.456-SP</div>
+                <div className="text-sm text-slate-400">CRECI - 270870 - F</div>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
