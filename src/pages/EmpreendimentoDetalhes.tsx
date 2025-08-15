@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -116,7 +117,27 @@ const EmpreendimentoDetalhes = () => {
                     <Phone className="h-4 w-4 mr-2" />
                     Ligar Agora
                   </Button>
-                  <Button size="lg" variant="outline" className="flex-1">
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="flex-1"
+                    onClick={async () => {
+                      try {
+                        await supabase.functions.invoke('trello-leads', {
+                          body: {
+                            name: 'Usuário WhatsApp',
+                            email: 'whatsapp@contato.com',
+                            empreendimento: empreendimentoSelecionado.title,
+                            source: 'whatsapp',
+                            page_url: window.location.href,
+                          }
+                        });
+                      } catch (error) {
+                        console.error('Error tracking WhatsApp click:', error);
+                      }
+                      window.open('https://wa.me/5511971511943', '_blank');
+                    }}
+                  >
                     <MessageCircle className="h-4 w-4 mr-2" />
                     WhatsApp
                   </Button>
@@ -180,7 +201,25 @@ const EmpreendimentoDetalhes = () => {
                       <Mail className="h-4 w-4 mr-2" />
                       rafael@email.com
                     </Button>
-                    <Button className="w-full bg-primary hover:bg-muted-700 text-white">
+                    <Button 
+                      className="w-full bg-primary hover:bg-muted-700 text-white"
+                      onClick={async () => {
+                        try {
+                          await supabase.functions.invoke('trello-leads', {
+                            body: {
+                              name: 'Usuário WhatsApp',
+                              email: 'whatsapp@contato.com',
+                              empreendimento: empreendimentoSelecionado.title,
+                              source: 'whatsapp',
+                              page_url: window.location.href,
+                            }
+                          });
+                        } catch (error) {
+                          console.error('Error tracking WhatsApp click:', error);
+                        }
+                        window.open('https://wa.me/5511971511943', '_blank');
+                      }}
+                    >
                       <MessageCircle className="h-4 w-4 mr-2" />
                       WhatsApp
                     </Button>

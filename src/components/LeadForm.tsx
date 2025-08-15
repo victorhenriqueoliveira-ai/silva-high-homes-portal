@@ -69,16 +69,17 @@ const LeadForm: React.FC<LeadFormProps> = ({ empreendimento }) => {
 
   const onSubmit = async (values: FormValues) => {
     try {
-      const { error } = await supabase.from("leads").insert([
-        {
+      const { data, error } = await supabase.functions.invoke('trello-leads', {
+        body: {
           name: values.name,
           email: values.email,
-          phone: values.phone, // já vem apenas com dígitos
+          phone: values.phone,
           message: values.message ?? null,
-          source: "form",
           empreendimento,
-        },
-      ]);
+          source: "form",
+          page_url: window.location.href,
+        }
+      });
 
       if (error) throw error;
 

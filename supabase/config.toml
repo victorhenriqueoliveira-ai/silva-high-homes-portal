@@ -1,1 +1,4 @@
 project_id = "axmlzmlnawstutojvlgg"
+
+[functions.trello-leads]
+verify_jwt = false
