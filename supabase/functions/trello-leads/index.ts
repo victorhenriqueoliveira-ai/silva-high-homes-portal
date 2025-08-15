@@ -16,24 +16,35 @@ const trelloListId = Deno.env.get('TRELLO_LIST_ID');
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 serve(async (req) => {
+  console.log("🚀 trello-leads function called");
+  console.log("📥 Request method:", req.method);
+  console.log("📥 Request headers:", Object.fromEntries(req.headers.entries()));
+  
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
+    console.log("✅ Responding to OPTIONS request");
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { name, email, phone, message, empreendimento, source = 'form', page_url } = await req.json();
+    console.log("📖 Reading request body...");
+    const body = await req.json();
+    console.log("📦 Request body:", body);
+    
+    const { name, email, phone, message, empreendimento, source = 'form', page_url } = body;
 
     console.log('Processing lead:', { name, email, phone, empreendimento, source, page_url });
 
     // Validate required fields
     if (!name || !email) {
+      console.log("❌ Validation failed - missing required fields");
       return new Response(
         JSON.stringify({ error: 'Nome e email são obrigatórios' }), 
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
+    console.log("💾 Inserting lead into database...");
     // Insert lead into database
     const { data: leadData, error: leadError } = await supabase
       .from('leads')
@@ -51,9 +62,9 @@ serve(async (req) => {
       .single();
 
     if (leadError) {
-      console.error('Error inserting lead:', leadError);
+      console.error('💥 Error inserting lead:', leadError);
       return new Response(
-        JSON.stringify({ error: 'Erro ao salvar lead no banco de dados' }), 
+        JSON.stringify({ error: 'Erro ao salvar lead no banco de dados', details: leadError }), 
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }

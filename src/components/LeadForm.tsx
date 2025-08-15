@@ -14,7 +14,7 @@ import {
   FormControl,
   FormMessage,
 } from "@/components/ui/form";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
 interface LeadFormProps {
@@ -68,28 +68,50 @@ const LeadForm: React.FC<LeadFormProps> = ({ empreendimento }) => {
   });
 
   const onSubmit = async (values: FormValues) => {
+    console.log("🚀 Form submission started", values);
+    console.log("📍 Empreendimento:", empreendimento);
+    console.log("🌐 Page URL:", window.location.href);
+    
     try {
+      console.log("📤 Invoking trello-leads function...");
+      
+      const payload = {
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        message: values.message ?? null,
+        empreendimento,
+        source: "form",
+        page_url: window.location.href,
+      };
+      
+      console.log("📦 Payload:", payload);
+      
       const { data, error } = await supabase.functions.invoke('trello-leads', {
-        body: {
-          name: values.name,
-          email: values.email,
-          phone: values.phone,
-          message: values.message ?? null,
-          empreendimento,
-          source: "form",
-          page_url: window.location.href,
-        }
+        body: payload
       });
 
-      if (error) throw error;
+      console.log("📥 Function response - data:", data);
+      console.log("📥 Function response - error:", error);
 
+      if (error) {
+        console.error("❌ Function returned error:", error);
+        throw error;
+      }
+
+      console.log("✅ Success! Lead submitted");
       toast({
         title: "Enviado com sucesso",
         description: "Em breve entraremos em contato.",
       });
       form.reset();
     } catch (err: any) {
-      console.error("Erro ao salvar lead:", err);
+      console.error("💥 Erro ao salvar lead:", err);
+      console.error("💥 Error details:", {
+        message: err.message,
+        stack: err.stack,
+        cause: err.cause
+      });
       toast({
         title: "Erro ao enviar",
         description: "Não foi possível enviar seus dados. Tente novamente.",
