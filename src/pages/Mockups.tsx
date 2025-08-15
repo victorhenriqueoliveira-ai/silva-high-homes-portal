@@ -130,6 +130,7 @@ export const empreendimentos = [
         ]
     },
     {
+        fachada: "/empreendimentos/ARQMoocaByLiving/fachada.png",
         id: 5,
         title: "ARQ Mooca By Living",
         location: "Mooca - São Paulo",
@@ -160,7 +161,8 @@ export const empreendimentos = [
             { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
         ]
     },
-    {
+    {    
+        fachada: "/empreendimentos/LivingUniqueSaúde/fachada.png",
         id: 6,
         title: "Living Unique Saúde",
         location: "Saúde - São Paulo",
@@ -192,6 +194,7 @@ export const empreendimentos = [
         ]
     },
     {
+        fachada: "/empreendimentos/TheResidenceBrooklinByLiving/fachada.png",
         id: 7,
         title: "The Residence Brooklin By Living",
         location: "Vila Mariana - Sao Paulo",
@@ -222,7 +225,8 @@ export const empreendimentos = [
             { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
         ]
     },
-    {
+    {   
+        fachada: "/empreendimentos/BrooklinSensesByCyrela/fachada.png",
         id: 8,
         title: "Brooklin SENSES BY CYRELA",
         location: "Brooklin - Sao Paulo",
@@ -254,6 +258,7 @@ export const empreendimentos = [
         ]
     },
     {
+        fachada: "/empreendimentos/VistaCyrelaMilano/fachada.png",
         id: 9,
         title: "VISTA CYRELA - Milano",
         location: "Jardim Everest - Sao Paulo",
@@ -284,7 +289,8 @@ export const empreendimentos = [
             { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
         ]
     },
-    {
+    {   
+        fachada: "/empreendimentos/TheEditionByLivingVilaMariana/fachada.png",
         id: 10,
         title: "The Edition By Living Vila Mariana",
         location: "Vila Mariana - Sao Paulo",

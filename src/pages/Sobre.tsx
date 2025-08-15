@@ -65,7 +65,7 @@ const Sobre = () => {
                   <Phone className="mr-2 h-5 w-5" />
                   Fale Comigo
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-800">
+                <Button size="lg" variant="outline" className="border-white hover:bg-gray-300 text-slate-800">
                   <Mail className="mr-2 h-5 w-5" />
                   Email
                 </Button>
@@ -257,7 +257,7 @@ const Sobre = () => {
               <Phone className="mr-2 h-5 w-5" />
               (11) 97151-1943
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
+            <Button size="lg" variant="outline" className="border-white text-slate-900">
               <Mail className="mr-2 h-5 w-5" />
               rafael.silva@email.com
             </Button>
