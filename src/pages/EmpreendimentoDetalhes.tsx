@@ -8,6 +8,7 @@ import { ArrowLeft, MapPin, Building, Calendar, Phone, Mail, MessageCircle, Star
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
+import PropertyCarousel from "@/components/PropertyCarousel";
 import { empreendimentos } from "./Mockups";
 import ImageModal from "@/components/organisms/modals";
 import fachada from "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg"
@@ -47,29 +48,13 @@ const EmpreendimentoDetalhes = () => {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Image Placeholder */}
-            <div className="space-y-4">
-              <div className="h-96 bg-primary from-emerald-400 to-blue-600 rounded-lg relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/20"></div>
-                <img src={empreendimentoSelecionado.fachada} alt={empreendimentoSelecionado.title} className="w-full h-full object-cover" />
-                <div className="absolute top-6 left-6">
-                  <Badge className="bg-amber-500 text-white mb-2">{empreendimentoSelecionado.status}</Badge>
-                  <h1 className="text-white text-3xl font-bold">{empreendimentoSelecionado.title}</h1>
-                </div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <div className="flex items-center text-lg">
-                    <MapPin className="h-5 w-5 mr-2" />
-                    {empreendimentoSelecionado.location}
-                  </div>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-3 gap-4">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="h-24 bg-gradient-to-br from-slate-300 to-slate-400 rounded-lg"></div>
-                ))}
-              </div>
-            </div>
+            {/* Property Carousel */}
+            <PropertyCarousel 
+              images={empreendimentoSelecionado.images || [empreendimentoSelecionado.fachada]}
+              title={empreendimentoSelecionado.title}
+              location={empreendimentoSelecionado.location}
+              status={empreendimentoSelecionado.status}
+            />
 
             {/* Info */}
             <div className="space-y-6">

@@ -4,6 +4,13 @@ import { gerarSlug } from "../lib/utils";
 export const empreendimentos = [
     {
         fachada: "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg",
+        images: [
+            "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/fachada.png",
+            "/empreendimentos/VistaCyrelaVeneza/fachada.png",
+            "/empreendimentos/ARQMoocaByLiving/fachada.png",
+            "/empreendimentos/BrooklinSensesByCyrela/fachada.png"
+        ],
         id: 1,
         title: "Home Boultique By Living Campo Belo",
         location: "Campo Belo - São Paulo",
@@ -35,6 +42,13 @@ export const empreendimentos = [
     },
     {
         fachada: "/empreendimentos/VistaCyrelaVeneza/fachada.png",
+        images: [
+            "/empreendimentos/VistaCyrelaVeneza/fachada.png",
+            "/empreendimentos/VistaCyrelaMilano/fachada.png",
+            "/empreendimentos/EPICJardimEuropa/fachada.png",
+            "/empreendimentos/LivingUniqueSaúde/fachada.png",
+            "/empreendimentos/TheEditionByLivingVilaMariana/fachada.png"
+        ],
         id: 2,
         title: "VISTA CYRELA - Venezia",
         location: "Jardim Everest - São Paulo",
