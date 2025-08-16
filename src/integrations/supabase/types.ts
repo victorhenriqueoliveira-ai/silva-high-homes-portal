@@ -7,7 +7,7 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "12.2.12 (cd3cf9e)"
@@ -59,6 +59,36 @@ export type Database = {
           trello_card_id?: string | null
           trello_synced?: boolean | null
           updated_at?: string
+        }
+        Relationships: []
+      }
+      whatsapp_clicks: {
+        Row: {
+          clicked_at: string
+          empreendimento: string | null
+          id: string
+          ip_address: string | null
+          page_url: string
+          user_agent: string | null
+          week_year: string
+        }
+        Insert: {
+          clicked_at?: string
+          empreendimento?: string | null
+          id?: string
+          ip_address?: string | null
+          page_url: string
+          user_agent?: string | null
+          week_year?: string
+        }
+        Update: {
+          clicked_at?: string
+          empreendimento?: string | null
+          id?: string
+          ip_address?: string | null
+          page_url?: string
+          user_agent?: string | null
+          week_year?: string
         }
         Relationships: []
       }

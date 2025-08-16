@@ -11,6 +11,7 @@ import LeadForm from "@/components/LeadForm";
 import PropertyCarousel from "@/components/PropertyCarousel";
 import { empreendimentos } from "./Mockups";
 import ImageModal from "@/components/organisms/modals";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 const EmpreendimentoDetalhes = () => {
   const { title } = useParams();
@@ -105,22 +106,7 @@ const EmpreendimentoDetalhes = () => {
                     size="lg" 
                     variant="outline" 
                     className="flex-1 text-sm sm:text-base"
-                    onClick={async () => {
-                      try {
-                        await supabase.functions.invoke('trello-leads', {
-                          body: {
-                            name: 'Usuário WhatsApp',
-                            email: 'whatsapp@contato.com',
-                            empreendimento: empreendimentoSelecionado.title,
-                            source: 'whatsapp',
-                            page_url: window.location.href,
-                          }
-                        });
-                      } catch (error) {
-                        console.error('Error tracking WhatsApp click:', error);
-                      }
-                      window.open('https://wa.me/5511971511943', '_blank');
-                    }}
+                    onClick={() => openWhatsApp(empreendimentoSelecionado.title)}
                   >
                     <MessageCircle className="h-4 w-4 mr-2" />
                     WhatsApp
@@ -187,22 +173,7 @@ const EmpreendimentoDetalhes = () => {
                     </Button>
                     <Button 
                       className="w-full bg-primary hover:bg-muted-700 text-white"
-                      onClick={async () => {
-                        try {
-                          await supabase.functions.invoke('trello-leads', {
-                            body: {
-                              name: 'Usuário WhatsApp',
-                              email: 'whatsapp@contato.com',
-                              empreendimento: empreendimentoSelecionado.title,
-                              source: 'whatsapp',
-                              page_url: window.location.href,
-                            }
-                          });
-                        } catch (error) {
-                          console.error('Error tracking WhatsApp click:', error);
-                        }
-                        window.open('https://wa.me/5511971511943', '_blank');
-                      }}
+                      onClick={() => openWhatsApp(empreendimentoSelecionado.title)}
                     >
                       <MessageCircle className="h-4 w-4 mr-2" />
                       WhatsApp

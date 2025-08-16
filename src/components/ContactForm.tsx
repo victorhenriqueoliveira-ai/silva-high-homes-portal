@@ -18,6 +18,7 @@ import {
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 // Util: aplica máscara brasileira de telefone em tempo real
 const formatPhoneBR = (value: string) => {
@@ -283,7 +284,10 @@ const ContactForm = () => {
                 <CardTitle className="text-lg sm:text-xl">Contato Rápido</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 pt-0">
-                <Button className="w-full bg-primary hover:bg-muted-200 text-white text-sm">
+                <Button 
+                  className="w-full bg-primary hover:bg-muted-200 text-white text-sm"
+                  onClick={() => openWhatsApp()}
+                >
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp
                 </Button>
