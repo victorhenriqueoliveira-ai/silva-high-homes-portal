@@ -1,28 +1,122 @@
-import { useState } from "react";
+import React from "react";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from "@/components/ui/form";
 import { Phone, Mail, MessageCircle } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+
+// Util: aplica máscara brasileira de telefone em tempo real
+const formatPhoneBR = (value: string) => {
+  const digits = value.replace(/\D/g, "");
+  if (digits.length <= 10) {
+    // (XX) XXXX-XXXX
+    return digits
+      .replace(/(\d{2})(\d)/, "($1) $2")
+      .replace(/(\d{4})(\d)/, "$1-$2")
+      .slice(0, 14);
+  }
+  // (XX) XXXXX-XXXX
+  return digits
+    .replace(/(\d{2})(\d)/, "($1) $2")
+    .replace(/(\d{5})(\d)/, "$1-$2")
+    .slice(0, 15);
+};
+
+// Zod schema com pré-processamento para validar somente os dígitos do telefone
+const formSchema = z.object({
+  name: z.string().min(3, "Informe seu nome completo"),
+  email: z.string().email("E-mail inválido"),
+  phone: z
+    .preprocess((val) => (typeof val === "string" ? val.replace(/\D/g, "") : val), z
+      .string()
+      .min(10, "Telefone inválido")
+      .max(11, "Telefone inválido")
+    ),
+  subject: z.string().min(1, "Selecione um assunto"),
+  message: z.string().min(10, "Conte um pouco mais (mín. 10 caracteres)"),
+});
+
+type FormValues = z.infer<typeof formSchema>;
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: ""
+  const { toast } = useToast();
+
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    },
+    mode: "onChange",
   });
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
+  const onSubmit = async (values: FormValues) => {
+    console.log("🚀 Contact form submission started", values);
+    console.log("🌐 Page URL:", window.location.href);
+    
+    try {
+      console.log("📤 Invoking trello-leads function...");
+      
+      const payload = {
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        message: `Assunto: ${values.subject}\n\n${values.message}`,
+        empreendimento: "Contato Geral",
+        source: "contact_form",
+        page_url: window.location.href,
+      };
+      
+      console.log("📦 Contact form payload:", payload);
+      
+      const { data, error } = await supabase.functions.invoke('trello-leads', {
+        body: payload
+      });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Here you would typically send the form data to a server
+      console.log("📥 Contact form response - data:", data);
+      console.log("📥 Contact form response - error:", error);
+
+      if (error) {
+        console.error("❌ Contact form error:", error);
+        throw error;
+      }
+
+      console.log("✅ Success! Contact form lead submitted");
+      toast({
+        title: "Mensagem enviada com sucesso",
+        description: "Em breve entraremos em contato.",
+      });
+      form.reset();
+    } catch (err: any) {
+      console.error("💥 Erro ao enviar mensagem:", err);
+      console.error("💥 Error details:", {
+        message: err.message,
+        stack: err.stack,
+        cause: err.cause
+      });
+      toast({
+        title: "Erro ao enviar",
+        description: "Não foi possível enviar sua mensagem. Tente novamente.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -47,80 +141,105 @@ const ContactForm = () => {
               </p>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Nome Completo *
-                    </label>
-                    <Input
-                      value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
-                      placeholder="Seu nome completo"
-                      required
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Nome Completo *</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Seu nome completo" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email *</FormLabel>
+                          <FormControl>
+                            <Input type="email" placeholder="seu@email.com" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Email *
-                    </label>
-                    <Input
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
-                      placeholder="seu@email.com"
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Telefone
-                    </label>
-                    <Input
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
-                      placeholder="(11) 97151-1943"
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Telefone *</FormLabel>
+                          <FormControl>
+                            <Input
+                              inputMode="tel"
+                              placeholder="(11) 97151-1943"
+                              value={field.value as string}
+                              onChange={(e) => field.onChange(formatPhoneBR(e.target.value))}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="subject"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Assunto *</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Selecione o assunto" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="compra">Interesse em Compra</SelectItem>
+                              <SelectItem value="venda">Quero Vender</SelectItem>
+                              <SelectItem value="investimento">Consultoria de Investimento</SelectItem>
+                              <SelectItem value="avaliacao">Avaliação de Imóvel</SelectItem>
+                              <SelectItem value="outro">Outro Assunto</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Assunto
-                    </label>
-                    <Select onValueChange={(value) => handleInputChange("subject", value)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Selecione o assunto" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="compra">Interesse em Compra</SelectItem>
-                        <SelectItem value="venda">Quero Vender</SelectItem>
-                        <SelectItem value="investimento">Consultoria de Investimento</SelectItem>
-                        <SelectItem value="avaliacao">Avaliação de Imóvel</SelectItem>
-                        <SelectItem value="outro">Outro Assunto</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Mensagem *
-                  </label>
-                  <Textarea
-                    value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
-                    placeholder="Conte-me mais detalhes sobre seu interesse..."
-                    rows={4}
-                    required
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Mensagem *</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Conte-me mais detalhes sobre seu interesse..."
+                            rows={4}
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-muted-400">
-                  Enviar Mensagem
-                </Button>
-              </form>
+                  <Button type="submit" size="lg" className="w-full bg-primary hover:bg-muted-400" disabled={form.formState.isSubmitting}>
+                    {form.formState.isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+                  </Button>
+                </form>
+              </Form>
             </CardContent>
           </Card>
 

@@ -44,9 +44,9 @@ const EmpreendimentoDetalhes = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <section className="py-6 sm:py-8 lg:py-12">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
             {/* Property Carousel */}
             <PropertyCarousel 
               images={empreendimentoSelecionado.images || [empreendimentoSelecionado.fachada]}
@@ -56,55 +56,55 @@ const EmpreendimentoDetalhes = () => {
             />
 
             {/* Info */}
-            <div className="space-y-6">
+            <div className="space-y-4 lg:space-y-6">
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <Badge variant="secondary">{empreendimentoSelecionado.type}</Badge>
-                  <div className="flex items-center text-slate-600">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <Badge variant="secondary" className="text-xs sm:text-sm">{empreendimentoSelecionado.type}</Badge>
+                  <div className="flex items-center text-slate-600 text-sm sm:text-base">
                     <Building className="h-4 w-4 mr-1" />
                     {empreendimentoSelecionado.units}
                   </div>
                 </div>
                 
-                <div className="text-3xl font-bold text-primary mb-4">
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-4">
                   {empreendimentoSelecionado.priceRange}
                 </div>
                 
-                <p className="text-slate-600 leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
                   {empreendimentoSelecionado.description}
                 </p>
 
                 {/* Aqui cheque se details existem para evitar erro */}
                 {empreendimentoSelecionado.details && (
-                  <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
                     <div>
-                      <div className="text-sm text-slate-500">Área</div>
-                      <div className="font-semibold">{empreendimentoSelecionado.details.area}</div>
+                      <div className="text-xs sm:text-sm text-slate-500">Área</div>
+                      <div className="font-semibold text-sm sm:text-base">{empreendimentoSelecionado.details.area}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-slate-500">Entrega</div>
-                      <div className="font-semibold">{empreendimentoSelecionado.deliveryDate || 'A definir'}</div>
+                      <div className="text-xs sm:text-sm text-slate-500">Entrega</div>
+                      <div className="font-semibold text-sm sm:text-base">{empreendimentoSelecionado.deliveryDate || 'A definir'}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-slate-500">Andares</div>
-                      <div className="font-semibold">{empreendimentoSelecionado.details.floors}</div>
+                      <div className="text-xs sm:text-sm text-slate-500">Andares</div>
+                      <div className="font-semibold text-sm sm:text-base">{empreendimentoSelecionado.details.floors}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-slate-500">Vagas</div>
-                      <div className="font-semibold">{empreendimentoSelecionado.details.parking}</div>
+                      <div className="text-xs sm:text-sm text-slate-500">Vagas</div>
+                      <div className="font-semibold text-sm sm:text-base">{empreendimentoSelecionado.details.parking}</div>
                     </div>
                   </div>
                 )}
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button size="lg" className="flex-1 bg-primary hover:bg-muted-500">
+                  <Button size="lg" className="flex-1 bg-primary hover:bg-muted-500 text-sm sm:text-base">
                     <Phone className="h-4 w-4 mr-2" />
                     Ligar Agora
                   </Button>
                   <Button 
                     size="lg" 
                     variant="outline" 
-                    className="flex-1"
+                    className="flex-1 text-sm sm:text-base"
                     onClick={async () => {
                       try {
                         await supabase.functions.invoke('trello-leads', {
@@ -133,9 +133,9 @@ const EmpreendimentoDetalhes = () => {
       </section>
 
       {/* Details Sections */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-8">
+      <section className="py-8 lg:py-12 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Floor Plans */}
             <Card className="lg:col-span-2">
               <CardHeader>
@@ -160,7 +160,7 @@ const EmpreendimentoDetalhes = () => {
             </Card>
 
             {/* Contato e Formulário */}
-            <div className="space-y-8">
+            <div className="space-y-6 lg:space-y-8">
               <Card>
                 <CardHeader>
                   <CardTitle>Fale com Rafael Silva</CardTitle>
@@ -224,11 +224,11 @@ const EmpreendimentoDetalhes = () => {
       </section>
 
       {/* Amenities */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Lazer e Comodidades</h2>
+      <section className="py-8 lg:py-12">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 lg:mb-12">Lazer e Comodidades</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {empreendimentoSelecionado.amenities?.map((amenity, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
@@ -243,16 +243,16 @@ const EmpreendimentoDetalhes = () => {
       </section>
 
       {/* Location */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Localização</h2>
+      <section className="py-8 lg:py-12 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 lg:mb-12">Localização</h2>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Endereço</h3>
-              <p className="text-slate-600 mb-6">{empreendimentoSelecionado.address}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-4">Endereço</h3>
+              <p className="text-sm sm:text-base text-slate-600 mb-6">{empreendimentoSelecionado.address}</p>
               
-              <h3 className="text-xl font-semibold mb-4">Pontos de Interesse</h3>
+              <h3 className="text-lg sm:text-xl font-semibold mb-4">Pontos de Interesse</h3>
               <div className="space-y-2">
                 {[
                   "Shopping Center - 5 min",
@@ -262,14 +262,14 @@ const EmpreendimentoDetalhes = () => {
                 ].map((point, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                    <span className="text-slate-600">{point}</span>
+                    <span className="text-sm sm:text-base text-slate-600">{point}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="h-80 bg-muted rounded-lg flex items-center justify-center">
-              <div className="text-slate-500">Mapa da Localização</div>
+            <div className="h-64 sm:h-80 bg-muted rounded-lg flex items-center justify-center">
+              <div className="text-sm sm:text-base text-slate-500">Mapa da Localização</div>
             </div>
           </div>
         </div>
