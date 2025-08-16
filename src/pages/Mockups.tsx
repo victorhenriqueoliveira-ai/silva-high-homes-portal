@@ -9,7 +9,8 @@ export const empreendimentos = [
             "/empreendimentos/BoutiqueByLivingIpiranga/fachada.png",
             "/empreendimentos/VistaCyrelaVeneza/fachada.png",
             "/empreendimentos/ARQMoocaByLiving/fachada.png",
-            "/empreendimentos/BrooklinSensesByCyrela/fachada.png"
+            "/empreendimentos/BrooklinSensesByCyrela/fachada.png", 
+            "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg"
         ],
         id: 1,
         title: "Home Boutique By Living Campo Belo",

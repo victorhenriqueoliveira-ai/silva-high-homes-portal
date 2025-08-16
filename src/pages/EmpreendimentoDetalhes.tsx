@@ -98,14 +98,10 @@ const EmpreendimentoDetalhes = () => {
                 )}
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button size="lg" className="flex-1 bg-primary hover:bg-muted-500 text-sm sm:text-base">
-                    <Phone className="h-4 w-4 mr-2" />
-                    Ligar Agora
-                  </Button>
                   <Button 
                     size="lg" 
                     variant="outline" 
-                    className="flex-1 text-sm sm:text-base"
+                    className="w-full sm:h-12 flex-1 text-sm sm:text-base"
                     onClick={() => openWhatsApp(empreendimentoSelecionado.title)}
                   >
                     <MessageCircle className="h-4 w-4 mr-2" />
@@ -147,49 +143,8 @@ const EmpreendimentoDetalhes = () => {
 
             {/* Contato e Formulário */}
             <div className="space-y-6 lg:space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Fale com Rafael Silva</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white font-bold text-xl">RS</span>
-                    </div>
-                    <div className="font-semibold">Ralph Santos</div>
-                    <div className="text-sm text-slate-600">CRECI - 270870 - F</div>
-                  </div>
-                  
-                  <Separator />
-                  
-                  <div className="space-y-3">
-                    <Button className="w-full" variant="outline">
-                      <Phone className="h-4 w-4 mr-2" />
-                      (11) 97151-1943
-                    </Button>
-                    <Button className="w-full" variant="outline">
-                      <Mail className="h-4 w-4 mr-2" />
-                      rafael@email.com
-                    </Button>
-                    <Button 
-                      className="w-full bg-primary hover:bg-muted-700 text-white"
-                      onClick={() => openWhatsApp(empreendimentoSelecionado.title)}
-                    >
-                      <MessageCircle className="h-4 w-4 mr-2" />
-                      WhatsApp
-                    </Button>
-                  </div>
-                  
-                  <div className="text-xs text-slate-500 text-center">
-                    Atendimento de segunda a sábado<br />
-                    das 9h às 18h
-                  </div>
-                </CardContent>
-              </Card>
-
               <LeadForm empreendimento={empreendimentoSelecionado.title} />
             </div>
-
           </div>
         </div>
       </section>

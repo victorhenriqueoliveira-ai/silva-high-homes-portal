@@ -56,7 +56,7 @@ const Header = () => {
               <div className="font-bold text-slate-800 text-sm">Rafael Silva</div>
             </div> */}
             <img
-              src="../../public/logotipo/logotipo.png"
+              src="/logotipo/logotipo.png"
               alt="Logo"
               className="h-8 sm:h-10 w-auto"
             />
@@ -114,7 +114,7 @@ const Header = () => {
               <div className="flex flex-col h-full">
                 <div className="flex items-center space-x-2 pb-6 border-b">
                   <img
-                    src="../../public/logotipo/brave_screenshot.png"
+                    src="/logotipo/logotipo.png"
                     alt="Logo"
                     className="h-8 sm:h-10 w-auto items-center"
                   />
