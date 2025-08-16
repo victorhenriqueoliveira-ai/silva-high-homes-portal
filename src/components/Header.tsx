@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Home, Building, User, Phone } from "lucide-react";
-import logotipo from "../../public/logotipo/brave_screenshot.png"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +56,7 @@ const Header = () => {
               <div className="font-bold text-slate-800 text-sm">Rafael Silva</div>
             </div> */}
             <img
-              src="../../public/logotipo/brave_screenshot.png"
+              src="../../public/logotipo/logotipo.png"
               alt="Logo"
               className="h-8 sm:h-10 w-auto"
             />
