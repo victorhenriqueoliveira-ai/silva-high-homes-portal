@@ -16,6 +16,10 @@ import {
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useParams } from "react-router-dom";
+import { empreendimentos } from "@/pages/Mockups";
+import { openWhatsApp } from "@/lib/whatsapp";
+import { MessageCircle } from "lucide-react";
 
 interface LeadFormProps {
   empreendimento: string;
@@ -55,6 +59,12 @@ type FormValues = z.infer<typeof formSchema>;
 
 const LeadForm: React.FC<LeadFormProps> = ({ empreendimento }) => {
   const { toast } = useToast();
+
+  const { title } = useParams();
+  
+    const empreendimentoSelecionado = empreendimentos.find(
+      e => e.slug === title
+    );
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -196,6 +206,13 @@ const LeadForm: React.FC<LeadFormProps> = ({ empreendimento }) => {
             </Button>
           </form>
         </Form>
+        <Button 
+          className="border border-primary flex items-center justify-center w-full bg-white hover:bg-gray-200 text-primary mt-2"
+          onClick={() => openWhatsApp(empreendimentoSelecionado.title)}
+        >
+          <MessageCircle className="h-4 w-4 mr-2" />
+          WhatsApp
+        </Button>
       </CardContent>
     </Card>
   );

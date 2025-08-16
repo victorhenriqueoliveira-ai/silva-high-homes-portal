@@ -75,7 +75,7 @@ const Sobre = () => {
             <div className="relative">
               <div className="w-full h-96 bg-gradient-to-br from-white/20 to-white/10 rounded-2xl backdrop-blur-sm border border-white/20"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <img src='../../public/logotipo/foto_rafael_horizontal.png' alt="Rafael Silva" className="w-full h-full object-cover rounded-2xl" />
+                <img src='/logotipo/foto_rafael_horizontal.png' alt="Rafael Silva" className="w-full h-full object-cover rounded-2xl" />
               </div>
             </div>
           </div>
