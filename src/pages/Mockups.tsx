@@ -12,7 +12,7 @@ export const empreendimentos = [
             "/empreendimentos/BrooklinSensesByCyrela/fachada.png"
         ],
         id: 1,
-        title: "Home Boultique By Living Campo Belo",
+        title: "Home Boutique By Living Campo Belo",
         location: "Campo Belo - São Paulo",
         type: "Residencial",
         units: "Pendente",

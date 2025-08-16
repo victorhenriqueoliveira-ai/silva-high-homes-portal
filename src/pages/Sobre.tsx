@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Award, Users, TrendingUp, Heart, Phone, Mail, Box, Circle, Square } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import fotoRafael from "../../public/logotipo/foto_rafael_horizontal.png";
+
 const Sobre = () => {
   const achievements = [
     { icon: Award, title: "Top Performer", description: "Melhor corretor do ano em 2023" },
@@ -75,7 +75,7 @@ const Sobre = () => {
             <div className="relative">
               <div className="w-full h-96 bg-gradient-to-br from-white/20 to-white/10 rounded-2xl backdrop-blur-sm border border-white/20"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <img src={fotoRafael} alt="Rafael Silva" className="w-full h-full object-cover rounded-2xl" />
+                <img src='../../public/logotipo/foto_rafael_horizontal.png' alt="Rafael Silva" className="w-full h-full object-cover rounded-2xl" />
               </div>
             </div>
           </div>

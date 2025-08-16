@@ -6,7 +6,6 @@ import { ArrowRight, Home, Star, Users, Award, Box, Circle, Square } from "lucid
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import fotoRafael from "../../public/logotipo/foto_rafael_horizontal.png";
 import { empreendimentos } from "./Mockups";
 
 const Index = () => {
@@ -214,7 +213,7 @@ const Index = () => {
             <div className="relative order-first lg:order-last">
               {/* <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg shadow-2xl bg-gradient-to-r from-primary to-[#C69755]"></div>
               <div className="absolute inset-0 bg-black/20 rounded-lg"></div> */}
-              <img src={fotoRafael} alt="Rafael Silva" className="w-full h-full object-cover rounded-2xl" />
+              <img src='../../public/logotipo/foto_rafael_horizontal.png' alt="Rafael Silva" className="w-full h-full object-cover rounded-2xl" />
               <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6">
                 <h3 className="text-primary text-xl sm:text-2xl font-bold">Rafael Silva</h3>
                 <h3 className="text-[#9e7a51] text-sm sm:text-base text-white/80">CRECI - 270870 - F</h3>

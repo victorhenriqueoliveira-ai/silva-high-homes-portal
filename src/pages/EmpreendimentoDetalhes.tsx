@@ -11,7 +11,6 @@ import LeadForm from "@/components/LeadForm";
 import PropertyCarousel from "@/components/PropertyCarousel";
 import { empreendimentos } from "./Mockups";
 import ImageModal from "@/components/organisms/modals";
-import fachada from "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg"
 
 const EmpreendimentoDetalhes = () => {
   const { title } = useParams();
