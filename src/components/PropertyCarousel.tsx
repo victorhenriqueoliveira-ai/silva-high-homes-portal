@@ -113,7 +113,7 @@ const PropertyCarousel = ({ images, title, location, status }: PropertyCarouselP
       </div>
 
       {/* Thumbnail Grid */}
-      <div className="grid grid-cols-4 gap-4">
+      {/* <div className="grid grid-cols-4 gap-4">
         {images.slice(1, 5).map((image, index) => (
           <button
             key={index + 1}
@@ -131,7 +131,7 @@ const PropertyCarousel = ({ images, title, location, status }: PropertyCarouselP
             />
           </button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -9,7 +9,7 @@ export const empreendimentos = [
             "/empreendimentos/BoutiqueByLivingIpiranga/fachada.png",
             "/empreendimentos/VistaCyrelaVeneza/fachada.png",
             "/empreendimentos/ARQMoocaByLiving/fachada.png",
-            "/empreendimentos/BrooklinSensesByCyrela/fachada.png", 
+            "/empreendimentos/BrooklinSensesByCyrela/fachada.png",
             "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg"
         ],
         id: 1,
@@ -37,18 +37,43 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "Pendente dormitórios", area: "26m²", price: "Valores - Pendente" , plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg" },
-            { type: "Pendente dormitórios", area: "146m²", price: "Valores - Pendente" , plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/fachada.png" },
-       ]
+            { title: "Titulo", type: "Pendente dormitórios", area: "26m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg" },
+            { title: "Titulo", type: "Pendente dormitórios", area: "146m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta1.png" },
+        ]
     },
     {
-        fachada: "/empreendimentos/VistaCyrelaVeneza/fachada.png",
+        fachada: "/empreendimentos/VistaCyrelaVenezia/fachada.png",
         images: [
-            "/empreendimentos/VistaCyrelaVeneza/fachada.png",
-            "/empreendimentos/VistaCyrelaMilano/fachada.png",
-            "/empreendimentos/EPICJardimEuropa/fachada.png",
-            "/empreendimentos/LivingUniqueSaúde/fachada.png",
-            "/empreendimentos/TheEditionByLivingVilaMariana/fachada.png"
+            "/empreendimentos/VistaCyrelaVenezia/fachada.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto1.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto2.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto3.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto4.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto5.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto6.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto7.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto8.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto9.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto10.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto11.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto12.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto13.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto14.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto15.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto16.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto17.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto18.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto19.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto20.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto21.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto22.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto23.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto24.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto25.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto26.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto27.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto28.png",
+            "/empreendimentos/VistaCyrelaVenezia/foto29.png",
         ],
         id: 2,
         title: "VISTA CYRELA - Venezia",
@@ -63,8 +88,8 @@ export const empreendimentos = [
         developer: "Construtora Premium SP",
         address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
         details: {
-            area: "85m² a 140m²",
-            floors: "25 andares",
+            area: "464,50m² a 883,50m²",
+            floors: "55 andares",
             unitsPerFloor: "4 a 6 unidades",
             parking: "2 a 3 vagas por unidade"
         },
@@ -75,13 +100,29 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-            { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-            { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
+            { title: "Torre 1 | Final 1 - Planta padrão", type: "4 Suítes + Sala íntima", area: "515m²", price: "A partir de R$ 800.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta1.png" },
+            { title: "Torre 1 | Final 1 - Planta opção 1", type: "2 Suítes + Private GYM", area: "515m²", price: "A partir de R$ 1.000.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta2.png" },
+            { title: "Torre 1 | Final 1 - Planta opção 2", type: "3 Suítes + Sala íntima + Adega", area: "515m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta3.png" },
+            { title: "Torre 1 | Final 1 - Planta opção 3", type: "2 Suítes + Sala íntima + Sala ampliada", area: "515m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta4.png" },
+            { title: "Torre 1 | Final 1 - Planta opção 4", type: "3 Suítes + Sala ampliada com biblioteca", area: "515m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta5.png" },
+            { title: "Torre 1 | Final 1 - Planta decorado", type: "3 Suítes + Sala íntima", area: "515m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta6.png" },
+            { title: "Torre 1 | Final 1 - Planta padrão", type: "4 Suítes + Sala íntima", area: "464,50m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta7.png" },
+            { title: "Torre 1 | Final 1 - Planta padrão garden", type: "4 Suítes + Sala íntima", area: "639m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta8.png" },
+            { title: "Torre 1 | Final 1 - Planta opção 1", type: "3 Suítes + Sala íntima", area: "464,50m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta9.png" },
+            { title: "Torre 1 | Final 1 - Planta opção 2", type: "2 Suítes + Sala ampliada com adega", area: "464,50m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta10.png" },
+            { title: "Torre 1 | Final 1 - Planta opção 3", type: "2 Suítes + Sala íntima + Ateliê", area: "464,50m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta11.png" },
+            { title: "Torre 1 | Final 1 - Planta opção 4", type: "3 Suítes + Sala íntima e Sala comercial ampliadas + Biblioteca", area: "464,50m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta12.png" },
+            { title: "Torre 1 | Final 1 - Planta padrão casa 44 PAV", type: "Pavimento Inferior - 4 Suítes + Terraço íntimo", area: "883,50m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta13.png" },
+            { title: "Torre 1 | Final 1 - Planta padrão casa 48 PAV", type: "Pavimento Inferior - 4 Suítes + Terraço íntimo", area: "789m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta14.png" },
+            { title: "Torre 1 | Final 1 - Planta padrão casa 46 e 50 PAV", type: "Pavimento Inferior - 4 Suítes + Terraço íntimo", area: "811m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta15.png" },
+            { title: "Torre 1 | Final 1 - Planta padrão casa 52 PAV", type: "Pavimento Inferior - 4 Suítes + Terraço íntimo", area: "778m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta16.png" },
+            { title: "Torre 1 | Final 2 - Planta padrão casa 48 PAV", type: "Pavimento Inferior - 4 Suítes + Terraço íntimo", area: "705m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta17.png" },
+            { title: "Torre 1 | Final 2 - Planta padrão casa 46 e 50 PAV", type: "Pavimento Inferior - 4 Suítes + Terraço íntimo", area: "717m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta18.png" },
+            { title: "Torre 1 | Final 2 - Planta padrão casa 52 PAV", type: "Pavimento Inferior - 4 Suítes + Terraço íntimo", area: "695m²", price: "A partir de R$ 1.200.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta19.png" },
         ]
     },
     {
-        fachada: "/empreendimentos/EPICJardimEuropa/fachada.png",  
+        fachada: "/empreendimentos/EPICJardimEuropa/fachada.png",
         id: 3,
         title: "EPIC Jardim Europa Design By PENINFARINA",
         location: "Jardim Europa - São Paulo",
@@ -107,9 +148,9 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-            { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-            { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
+            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg" },
+            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
         ]
     },
     {
@@ -139,9 +180,9 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-            { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-            { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
+            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
         ]
     },
     {
@@ -171,12 +212,12 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-            { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-            { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
+            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
         ]
     },
-    {    
+    {
         fachada: "/empreendimentos/LivingUniqueSaúde/fachada.png",
         id: 6,
         title: "Living Unique Saúde",
@@ -203,9 +244,9 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-            { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-            { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
+            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
         ]
     },
     {
@@ -235,12 +276,12 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-            { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-            { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
+            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
         ]
     },
-    {   
+    {
         fachada: "/empreendimentos/BrooklinSensesByCyrela/fachada.png",
         id: 8,
         title: "Brooklin SENSES BY CYRELA",
@@ -267,9 +308,9 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-            { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-            { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
+            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
         ]
     },
     {
@@ -299,12 +340,12 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-            { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-            { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
+            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
         ]
     },
-    {   
+    {
         fachada: "/empreendimentos/TheEditionByLivingVilaMariana/fachada.png",
         id: 10,
         title: "The Edition By Living Vila Mariana",
@@ -331,9 +372,9 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { type: "3 dormitórios", area: "85m²", price: "A partir de R$ 800.000" },
-            { type: "4 dormitórios", area: "120m²", price: "A partir de R$ 1.000.000" },
-            { type: "Cobertura", area: "140m²", price: "A partir de R$ 1.200.000" }
+            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
+            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg" }
         ]
     }
 ].map(e => ({ ...e, slug: gerarSlug(e.title) }));

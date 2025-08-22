@@ -260,41 +260,20 @@ const ContactForm = () => {
                 
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center">
-                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-3 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm sm:text-base">(11) 97151-1943</div>
-                      <div className="text-xs sm:text-sm text-slate-500">Ligações e WhatsApp</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center">
                     <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-3 flex-shrink-0" />
                     <div>
-                      <div className="font-medium text-sm sm:text-base">rafael@email.com</div>
+                      <div className="font-medium text-sm sm:text-base">rafaelsdossantos.silva@gmail.com</div>
                       <div className="text-xs sm:text-sm text-slate-500">Email principal</div>
                     </div>
                   </div>
+                  <Button 
+                    className="w-full bg-primary hover:bg-muted-200 text-white text-sm"
+                    onClick={() => openWhatsApp()}
+                  >
+                    <MessageCircle className="h-4 w-4 mr-2" />
+                    WhatsApp
+                </Button>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Quick Contact */}
-            <Card className="border-0 shadow-lg">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg sm:text-xl">Contato Rápido</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3 pt-0">
-                <Button 
-                  className="w-full bg-primary hover:bg-muted-200 text-white text-sm"
-                  onClick={() => openWhatsApp()}
-                >
-                  <MessageCircle className="h-4 w-4 mr-2" />
-                  WhatsApp
-                </Button>
-                <Button className="w-full text-sm" variant="outline">
-                  <Mail className="h-4 w-4 mr-2" />
-                  Enviar Email
-                </Button>
               </CardContent>
             </Card>
           </div>
