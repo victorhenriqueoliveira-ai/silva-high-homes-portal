@@ -12,6 +12,7 @@ import PropertyCarousel from "@/components/PropertyCarousel";
 import { empreendimentos } from "./Mockups";
 import ImageModal from "@/components/organisms/modals";
 import { openWhatsApp } from "@/lib/whatsapp";
+import { useState } from "react";
 
 const EmpreendimentoDetalhes = () => {
   const { title } = useParams();
@@ -27,6 +28,14 @@ const EmpreendimentoDetalhes = () => {
       </div>
     );
   }
+
+  const [showAll, setShowAll] = useState(false);
+
+  const maxToShow = 8;
+
+  const floorPlansToShow = showAll
+    ? empreendimentoSelecionado.floorPlans
+    : empreendimentoSelecionado.floorPlans?.slice(0, maxToShow);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -125,18 +134,28 @@ const EmpreendimentoDetalhes = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {empreendimentoSelecionado.floorPlans?.map((plan, index) => (
+                  {floorPlansToShow?.map((plan, index) => (
                     <div key={index} className="flex justify-between items-center p-4 border rounded-lg hover:bg-slate-50 transition-colors">
                       <div>
+                        <div className="font-semibold text-primary">{plan.title}</div>
                         <div className="font-semibold">{plan.type}</div>
                         <div className="text-slate-600">{plan.area}</div>
                       </div>
                       <div className="text-right">
-                        <div className="font-bold text-primary">{plan.price}</div>
                         <ImageModal imageUrl={plan.plantaImg} />
                       </div>
                     </div>
                   ))}
+                  {empreendimentoSelecionado.floorPlans?.length > maxToShow && (
+                    <div className="text-center">
+                      <button
+                        onClick={() => setShowAll((prev) => !prev)}
+                        className="px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
+                      >
+                        {showAll ? "Ver menos" : "Ver mais"}
+                      </button>
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
