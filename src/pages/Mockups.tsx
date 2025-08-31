@@ -1,34 +1,39 @@
-import { Dumbbell, Car, Shield, Star } from "lucide-react";
+import { Dumbbell, Car, Shield, Star, Gem , Wallpaper} from "lucide-react";
+import { FaRegBuilding } from "react-icons/fa";
+import { AiTwotoneShopping } from "react-icons/ai";
 import { gerarSlug } from "../lib/utils";
 
 export const empreendimentos = [
     {
-        fachada: "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg",
+        fachada: "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpg",
         images: [
-            "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg",
-            "/empreendimentos/BoutiqueByLivingIpiranga/fachada.png",
-            "/empreendimentos/VistaCyrelaVeneza/fachada.png",
-            "/empreendimentos/ARQMoocaByLiving/fachada.png",
-            "/empreendimentos/BrooklinSensesByCyrela/fachada.png",
-            "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpeg"
+            "/empreendimentos/BoutiqueByLivingCampoBelo/fachada.jpg",
+            "/empreendimentos/BoutiqueByLivingCampoBelo/foto1.jpg",
+            "/empreendimentos/BoutiqueByLivingCampoBelo/foto2.jpg",
+            "/empreendimentos/BoutiqueByLivingCampoBelo/foto3.jpg",
+            "/empreendimentos/BoutiqueByLivingCampoBelo/foto4.jpg",
+            "/empreendimentos/BoutiqueByLivingCampoBelo/foto5.jpg",
+            "/empreendimentos/BoutiqueByLivingCampoBelo/foto6.jpg",
+            "/empreendimentos/BoutiqueByLivingCampoBelo/foto7.jpg",
+            "/empreendimentos/BoutiqueByLivingCampoBelo/foto8.jpg"
         ],
         id: 1,
         title: "Home Boutique By Living Campo Belo",
         location: "Campo Belo - São Paulo",
         type: "Residencial",
-        units: "Pendente",
-        status: "Lançamento",
+        units: "88 unidades",
+        status: "Lançamento", 
         description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada em uma área nobre da cidade.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2 vagas", "Área de lazer completa"],
         priceRange: "Valor - Pendente",
         deliveryDate: "Pendente",
-        developer: "Construtora Premium SP",
+        developer : "Cyrela",
         address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
         details: {
-            area: "85m² a 140m²",
+            area: "149m² a 265m²",
             floors: "25 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "1 a 2 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -37,8 +42,14 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Titulo", type: "Pendente dormitórios", area: "26m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg" },
-            { title: "Titulo", type: "Pendente dormitórios", area: "146m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta1.png" },
+            { title: "Planta Padrão", type: "3 Suítes| Cozinha integrada e WC de serviço | 2 Vagas", area: "146m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpg" },
+            { title: "Planta Opção", type: "3 Suítes| Cozinha integrada e despensa | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta2.jpg" },
+            { title: "Planta Opção", type: "3 Suítes| Cozinha fechada e despensa | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta3.jpg" },
+            { title: "Planta Opção", type: "4 Dormitórios | Cozinha integrada e WC de serviço | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta4.jpg" },
+            { title: "Planta Opção", type: "4 Dormitórios | Cozinha fechada e despensa | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta5.jpg" },
+            { title: "Planta Opção", type: "2 Suítes| Cozinha integrada e WC de serviço | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta6.jpg" },
+            { title: "Duplex Padrão", type: "3 Suítes| Cozinha integrada | WC de serviço e Estar | 2 Vagas", area: "265m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta7.jpg" , plantaImg2: "/empreendimentos/BoutiqueByLivingCampoBelo/planta8.jpg"},
+            { title: "Duplex Opção", type: "4 Suítes| Cozinha fechada e despensa | 2 Vagas", area: "265m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta9.jpg" , plantaImg2: "/empreendimentos/BoutiqueByLivingCampoBelo/planta10.jpg"},
         ]
     },
     {
@@ -79,14 +90,15 @@ export const empreendimentos = [
         title: "VISTA CYRELA - Venezia",
         location: "Jardim Everest - São Paulo",
         type: "Residencial",
-        units: "80 unidades",
+        units: "53 pavimentos",
         status: "Lançamento",
         description: "Torres residenciais com conceito sustentável e design contemporâneo em um dos bairros mais nobres.",
         features: ["2-3 dormitórios", "Terraço privativo", "1-2 vagas", "Spa e fitness"],
         priceRange: "Valor - Pendente",
         deliveryDate: "Dezembro 2025",
-        developer: "Construtora Premium SP",
-        address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        developer : "Cyrela",
+        address: "Rua São Cassiano, Jardim Guedala, São Paulo - SP",
+        localizacao: "https://www.google.com/maps?q=Rua%20S%C3%A3o%20Cassiano%2C%20Jardim%20Guedala%2C%20S%C3%A3o%20Paulo%20-%20SP&z=16&output=embed",
         details: {
             area: "464,50m² a 883,50m²",
             floors: "55 andares",
@@ -97,7 +109,11 @@ export const empreendimentos = [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
             { icon: Car, name: "Valet parking", description: "Serviço de manobrista 24h" },
             { icon: Shield, name: "Segurança 24h", description: "Portaria e monitoramento integral" },
-            { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
+            { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" },
+            { icon: Gem, name: "Alto padrão em acabamento", description: "Empreendimento com alto padrão em acabamentos luxuosos" },
+            { icon: Wallpaper, name: "Vista panorâmica", description: "Residência com ampla vista para o horizonte" },
+            { icon: FaRegBuilding, name: "Coberturas maravilhosas", description: "Apartamentos na coberturas, com vista maravilhosa" },
+            { icon: AiTwotoneShopping, name: "Perto de shoppings", description: "Empreendimento situado a menos de 15 minutos" },
         ],
         floorPlans: [
             { title: "Torre 1 | Final 1 - Planta padrão", type: "4 Suítes + Sala íntima", area: "515m²", price: "A partir de R$ 800.000", plantaImg: "/empreendimentos/VistaCyrelaVenezia/planta1.png" },
@@ -123,23 +139,43 @@ export const empreendimentos = [
     },
     {
         fachada: "/empreendimentos/EPICJardimEuropa/fachada.png",
+        images: [
+            "/empreendimentos/EPICJardimEuropa/fachada.png",
+            "/empreendimentos/EPICJardimEuropa/foto1.png",
+            "/empreendimentos/EPICJardimEuropa/foto2.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto3.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto4.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto5.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto6.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto7.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto8.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto9.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto10.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto11.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto12.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto13.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto14.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto15.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto16.jpg",
+            "/empreendimentos/EPICJardimEuropa/foto17.jpg"
+        ],
         id: 3,
         title: "EPIC Jardim Europa Design By PENINFARINA",
         location: "Jardim Europa - São Paulo",
         type: "Residencial",
-        units: "200 salas",
+        units: "57 Pavimentos",
         status: "Lançamento",
-        description: "Complexo comercial moderno com tecnologia de ponta e facilidades corporativas de última geração.",
+        description: "A 210M DE ALTURA, UMA VISTA INFINITA PARA O VERDE.",
         features: ["Salas 40-200m²", "Coworking", "Heliponto", "Concierge 24h"],
         priceRange: "Valor - Pendente",
         deliveryDate: "Dezembro 2025",
-        developer: "Construtora Premium SP",
-        address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        developer : "Cyrela",
+        address: "R. Joaquim Antunes, 377 - Jardim Europa, São Paulo - SP",
         details: {
-            area: "85m² a 140m²",
-            floors: "25 andares",
+            area: "Apartamentos de 339 a 400m² - Penthouses de 536 a 637m²",
+            floors: "57 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "4 a 6 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -148,28 +184,53 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg" },
-            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
+            { title: "Planta padrão", type: "4 Suítes", area: "339m²", price: "A partir de R$ 800.000", plantaImg: "/empreendimentos/EPICJardimEuropa/planta1.jpeg"},
+            { title: "Planta opção 1", type: "2 Suítes (master ampliada) + sala de almoço + sala íntima + copa noturna", area: "339m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta2.jpeg" },
+            { title: "Planta opção 2", type: "3 Suítes + sala íntima + cozinha ampliada + copa noturna", area: "339m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta3.jpeg"},
+            { title: "Planta padrão", type: "4 Suítes + sala íntima", area: "379m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta4.jpeg"},
+            { title: "Planta opção 2", type: "3 Suítes + cozinha ampliada + sala íntima e copa noturna", area: "379m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta5.jpeg"},
+            { title: "Planta opção 1", type: "3 Suítes (master ampliada) + sala de almoço + home office", area: "379m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta6.jpeg"},
+            { title: "Planta padrão", type: "4 Suítes + sala íntima", area: "400,5m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta7.jpeg"},
+            { title: "Planta opção 3", type: "3 Suítes (master ampliada) + sala íntima + copa", area: "379m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta8.jpeg"},
+            { title: "Planta padrão casa", type: "4 Suítes + office + sala íntima | pavimento inferior", area: "576,5m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta9.jpeg"},
+            { title: "Planta padrão casa garden", type: "4 Suítes + office + sala íntima | Pavimento inferior", area: "637m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta10.jpeg"},
+            { title: "Planta padrão casa garden", type: "4 Suítes + office + sala íntima | Pavimento inferior", area: "637m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta11.jpeg"},
+            { title: "Planta padrão casa", type: "4 Suítes + sala íntima | Pavimento inferior", area: "536m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta12.jpeg"},
+            { title: "Planta padrão casa garden", type: "4 Suítes + sala íntima | Pavimento inferior", area: "565m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta13.jpeg"},
+            { title: "Planta padrão casa garden", type: "4 Suítes + sala íntima | Pavimento inferior", area: "565m²", plantaImg: "/empreendimentos/EPICJardimEuropa/planta14.jpeg"},
         ]
     },
     {
-        fachada: "/empreendimentos/BoutiqueByLivingIpiranga/fachada.png",
+        fachada: "/empreendimentos/BoutiqueByLivingIpiranga/fachada.jpg",
+        images: [
+            "/empreendimentos/BoutiqueByLivingIpiranga/fachada.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto1.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto2.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto3.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto4.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto5.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto6.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto7.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto8.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto9.jpg",
+            "/empreendimentos/BoutiqueByLivingIpiranga/foto10.jpg"
+        ],
         id: 4,
         title: "Home Boutique By Living Ipiranga",
         location: "Ipiranga - São Paulo",
         type: "Residencial",
-        units: "60 unidades",
+        units: "84 unidades",
         status: "Em Construção",
-        description: "Apartamentos de luxo com vista panorâmica e acabamentos importados em condomínio exclusivo.",
+        description: "Viva a sensação de morar em um hotel boutique com a vantagem de não ter data para o check out.",
         features: ["4-5 dormitórios", "Master suite", "3-4 vagas", "Adega privativa"],
         priceRange: "Valor - Pendente",
         deliveryDate: "Dezembro 2025",
-        developer: "Construtora Premium SP",
+        developer : "Cyrela",
         address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        localizacao: "https://www.google.com/maps?q=Av.%20Nazaré%2C%201616%20-%20Ipiranga%2C%20São%20Paulo%20-%20SP&z=16&output=embed",
         details: {
-            area: "85m² a 140m²",
-            floors: "25 andares",
+            area: "137m² a 156m²",
+            floors: "23 andares",
             unitsPerFloor: "4 a 6 unidades",
             parking: "2 a 3 vagas por unidade"
         },
@@ -180,30 +241,56 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
+            { title: "Implantação", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/plantaImplantacao.jpg"},
+            { title: "Planta Padrão", type: "3 suítes", area: "137m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta1.jpg"},
+            { title: "Planta Opção 1", type: "3 suítes", area: "137m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta2.jpg"},
+            { title: "Planta Opção 2", type: "3 suítes", area: "137m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta3.jpg"},
+            { title: "Planta Padrão", type: "3 suítes", area: "156m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta4.jpg"},
+            { title: "Planta Padrão 1", type: "3 suítes", area: "156m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta5.jpg"},
+            { title: "Planta Padrão 2", type: "3 suítes", area: "156m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta6.jpg"},
         ]
     },
     {
         fachada: "/empreendimentos/ARQMoocaByLiving/fachada.png",
+        images: [
+            "/empreendimentos/ARQMoocaByLiving/fachada.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto01.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto02.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto03.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto04.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto05.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto06.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto07.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto08.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto09.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto10.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto11.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto12.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto13.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto14.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto15.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto16.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto17.jpg",
+            "/empreendimentos/ARQMoocaByLiving/foto18.jpg"
+        ],
         id: 5,
         title: "ARQ Mooca By Living",
         location: "Mooca - São Paulo",
         type: "Residencial",
-        units: "150 salas",
+        units: "214 unidades",
         status: "Em Construção",
         description: "Edifício inteligente com certificação sustentável na principal avenida corporativa de São Paulo.",
         features: ["Salas 30-300m²", "Automação total", "Terraço corporativo", "Estacionamento robótico"],
         priceRange: "Valor - Pendente",
-        deliveryDate: "Dezembro 2025",
-        developer: "Construtora Premium SP",
-        address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        deliveryDate: "Abril de 2026",
+        developer : "Cyrela",
+        address: "Rua Padre Raposo, 100 - Mooca - São Paulo, SP",
+        localizacao: "https://www.google.com/maps?q=Rua%20Padre%20Raposo%2C%20100%20-%20Mooca%2C%20São%20Paulo%2C%20SP&z=16&output=embed",
         details: {
-            area: "85m² a 140m²",
-            floors: "25 andares",
+            area: "71m² a 120m²",
+            floors: "24 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "1 a 2 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -212,30 +299,48 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
+            { title: "Planta Padrão", type: "2 Dormitórios | 1 vaga", area: "71m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta1.png"},
+            { title: "Planta Padrão", type: "3 Dormitórios | 1 Suíte com 1 vaga", area: "82m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta2.png"},
+            { title: "Planta Opção", type: "2 Suítes | 1 vaga", area: "82m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta3.png"},
+            { title: "Planta Padrão", type: "3 Suítes | 2 Vagas", area: "120m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta4.png"},
+            { title: "Planta Opção", type: "4 Dormitórios | 2 Suítes | 2 Vagas", area: "156m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta5.png"},
         ]
     },
     {
-        fachada: "/empreendimentos/LivingUniqueSaúde/fachada.png",
+        fachada: "/empreendimentos/LivingUniqueSaúde/fachada.jpg",
+        images : [
+            "/empreendimentos/LivingUniqueSaúde/fachada.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto1.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto2.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto3.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto4.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto5.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto6.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto7.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto8.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto9.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto10.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto11.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto12.jpg",
+            "/empreendimentos/LivingUniqueSaúde/foto13.jpg",
+        ],
         id: 6,
         title: "Living Unique Saúde",
         location: "Saúde - São Paulo",
         type: "Residencial",
-        units: "100 unidades",
+        units: "168 unidades",
         status: "Em Construção",
         description: "Condomínio sustentável com conceito biofílico e soluções ecológicas inovadoras.",
         features: ["2-4 dormitórios", "Jardim vertical", "2 vagas", "Horta comunitária"],
         priceRange: "Valor - Pendente",
-        deliveryDate: "Dezembro 2025",
-        developer: "Construtora Premium SP",
-        address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        deliveryDate: "Junho de 2026",
+        developer : "Cyrela",
+        address: "Avenida Afonso Mariano Fagundes, 417 - Saúde - São Paulo, SP",
         details: {
-            area: "85m² a 140m²",
-            floors: "25 andares",
+            area: "67m² a 125m²",
+            floors: "17 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "1 a 2 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -244,30 +349,47 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
+            { title: "Implantação", plantaImg: "/empreendimentos/LivingUniqueSaúde/plantaImplantacao.jpg"},
+            { title: "Planta Opção", type: "2 Dormitórios | 1 Suíte | 1 Vaga", area: "67m²", plantaImg: "/empreendimentos/LivingUniqueSaúde/planta1.jpg"},
+            { title: "Planta Opção 2", type: "2 Dormitórios | 1 Suíte | 1 Vaga", area: "69m²", plantaImg: "/empreendimentos/LivingUniqueSaúde/planta2.jpg"},
+            { title: "Planta Padrão", type: "3 Dormitórios | 1 Suíte | 1 Vaga", area: "82m²", plantaImg: "/empreendimentos/LivingUniqueSaúde/planta3.jpg"},
+            { title: "Planta Opção", type: "2 Suítes | 1 Vaga", area: "82m²", plantaImg: "/empreendimentos/LivingUniqueSaúde/planta4.jpg"},
+            { title: "Planta Padrão", type: "3 Suítes | 2 Vagas Determinadas", area: "125m²", plantaImg: "/empreendimentos/LivingUniqueSaúde/planta5.jpg"},
+            { title: "Planta Opção", type: "4 Dormitórios | 2 Suítes | 2 Vagas Determinadas", area: "125m²", plantaImg: "/empreendimentos/LivingUniqueSaúde/planta6.jpg"}
         ]
     },
     {
         fachada: "/empreendimentos/TheResidenceBrooklinByLiving/fachada.png",
+        images : [
+            "/empreendimentos/TheResidenceBrooklinByLiving/fachada.webp",
+            "/empreendimentos/TheResidenceBrooklinByLiving/foto1.webp",
+            "/empreendimentos/TheResidenceBrooklinByLiving/foto2.webp",
+            "/empreendimentos/TheResidenceBrooklinByLiving/foto3.webp",
+            "/empreendimentos/TheResidenceBrooklinByLiving/foto4.webp",
+            "/empreendimentos/TheResidenceBrooklinByLiving/foto5.webp",
+            "/empreendimentos/TheResidenceBrooklinByLiving/foto6.webp",
+            "/empreendimentos/TheResidenceBrooklinByLiving/foto7.webp",
+            "/empreendimentos/TheResidenceBrooklinByLiving/foto8.webp",
+            "/empreendimentos/TheResidenceBrooklinByLiving/foto9.webp"
+        ],
         id: 7,
         title: "The Residence Brooklin By Living",
         location: "Vila Mariana - Sao Paulo",
         type: "Residencial",
-        units: "70 unidades",
+        units: "84 unidades",
         status: "Lançamento",
         description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
         priceRange: "Valor - Pendente",
-        deliveryDate: "Dezembro 2025",
-        developer: "Construtora Premium SP",
-        address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        deliveryDate: "Dezembro de 2026",
+        developer : "Cyrela",
+        address: "R. Indiana, 74 - Brooklin",
+        localizacao : "https://www.google.com/maps?q=R.%20Indiana%2C%2074%20-%20Brooklin%2C%20São%20Paulo%2C%20SP&z=16&output=embed",
         details: {
-            area: "85m² a 140m²",
-            floors: "25 andares",
+            area: "64m² a 120m²",
+            floors: "17 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "1 a 2 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -276,30 +398,49 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
+            { title: "Implantação", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/plantaImplantacao.png"},
+            { title: "Planta Padrão", type: "2 Dormitórios | 1 Suíte | 1 Vaga", area: "71m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta1.png"},
+            { title: "Planta Opção", type: "2 Suítes | 1 Vaga", area: "71m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta2.png"},
+            { title: "Planta Padrão", type: "2 Suítes | 1 Vaga", area: "88m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta3.png"},
+            { title: "Planta Opção", type: "3 Dormitórios | 1 Suítes | 1 Vagas", area: "88m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta4.png"},
+            { title: "Planta Padrão", type: "3 Suítes | 2 Vagas", area: "111m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta5.png"},
         ]
     },
     {
         fachada: "/empreendimentos/BrooklinSensesByCyrela/fachada.png",
+        images : [
+            "/empreendimentos/BrooklinSensesByCyrela/fachada.png",
+            "/empreendimentos/BrooklinSensesByCyrela/foto1.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto2.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto3.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto4.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto5.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto6.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto7.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto8.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto9.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto10.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto11.jpg",
+            "/empreendimentos/BrooklinSensesByCyrela/foto12.jpg"
+        ],
         id: 8,
         title: "Brooklin SENSES BY CYRELA",
         location: "Brooklin - Sao Paulo",
         type: "Residencial",
-        units: "70 unidades",
+        units: "144 unidades",
         status: "Lançamento",
-        description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada.",
+        description: "Com localização privilegiada próximo a shoppings como JK Iguatemi, Market Place, Morumbi e Vila Olímpia, o Brooklin é um dos bairros mais nobres da Zona Sul, e também sedia um dos pólos empresariais da cidade, em volta da Av. Berrini, além de fácil acesso à Av. Santo Amaro.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
         priceRange: "Valor - Pendente",
-        deliveryDate: "Dezembro 2025",
-        developer: "Construtora Premium SP",
-        address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        deliveryDate: "Dezembro 2026",
+        developer : "Cyrela",
+        address: "R. Michigan, 922 - Brooklin - Sao Paulo, SP",
+        localizacao : "https://www.google.com/maps?q=R.%20Michigan%2C%20922%20-%20Brooklin%2C%20São%20Paulo%20-%20SP%2C%2004566-001&z=16&output=embed",
         details: {
-            area: "85m² a 140m²",
-            floors: "25 andares",
+            area: "145m² a 178m²",
+            floors: "27 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "1 a 2 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -308,30 +449,54 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
+            { title: "Planta Padrão", type: "Final 4", area: "145m²", plantaImg: "/empreendimentos/BrooklinSensesByCyrela/planta1.png"},
+            { title: "Planta Opção", type: " Final 4 | 3 Suítes + cozinha aberta", area: "145m²", plantaImg: "/empreendimentos/BrooklinSensesByCyrela/planta2.png"},
+            { title: "Planta Padrão", type: "Final 2", area: "178m²", plantaImg: "/empreendimentos/BrooklinSensesByCyrela/planta3.png"},
+            { title: "Planta Opção", type: "Final 2 | 3 Suítes + cozinha ampliada", area: "178m²", plantaImg: "/empreendimentos/BrooklinSensesByCyrela/planta4.png"}
         ]
     },
     {
         fachada: "/empreendimentos/VistaCyrelaMilano/fachada.png",
+        images: [
+            "/empreendimentos/VistaCyrelaMilano/fachada.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto1.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto2.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto3.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto4.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto5.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto6.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto7.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto8.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto9.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto10.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto11.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto12.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto13.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto14.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto15.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto16.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto17.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto18.webp",
+            "/empreendimentos/VistaCyrelaMilano/foto19.webp"
+        ],
         id: 9,
         title: "VISTA CYRELA - Milano",
         location: "Jardim Everest - Sao Paulo",
         type: "Residencial",
-        units: "70 unidades",
+        units: "50 apartamentos exclusivos",
         status: "Lançamento",
         description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
         priceRange: "Valor - Pendente",
-        deliveryDate: "Dezembro 2025",
-        developer: "Construtora Premium SP",
-        address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        deliveryDate: "Dezembro 2027",
+        developer : "Cyrela",
+        address: "Av. Lopes de Azevedo, 46 - Jardim Guedala, São Paulo - SP",
+        localizacao: "https://www.google.com/maps?q=Av.%20Lopes%20de%20Azevedo%2C%2046%20-%20Jardim%20Guedala%2C%20São%20Paulo%20-%20SP&z=16&output=embed",
         details: {
-            area: "85m² a 140m²",
-            floors: "25 andares",
+            area: "348m² a 710m²",
+            floors: "27 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "4 a 6 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -340,30 +505,50 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"}
+            { title: "Planta Opção 1", area: "376m²", plantaImg: "/empreendimentos/VistaCyrelaMilano/planta1.webp"},
+            { title: "Planta Opção 1", area: "393m²", plantaImg: "/empreendimentos/VistaCyrelaMilano/planta2.webp"},
+            { title: "Planta Opção 1",  area: "395m²", plantaImg: "/empreendimentos/VistaCyrelaMilano/planta3.webp"},
+            { title: "Planta Opção 1",  area: "411m²", plantaImg: "/empreendimentos/VistaCyrelaMilano/planta4.webp"},
+            { title: "Planta Opção 1",  area: "492m²", plantaImg: "/empreendimentos/VistaCyrelaMilano/planta5.webp"},
+            { title: "Planta Garden",  area: "404m²", plantaImg: "/empreendimentos/VistaCyrelaMilano/planta6.webp"},
+            { title: "Planta Garden",  area: "436m²", plantaImg: "/empreendimentos/VistaCyrelaMilano/planta7.webp"},
+            { title: "Planta Duplex - Inferior",  area: "710m²", plantaImg: "/empreendimentos/VistaCyrelaMilano/planta8.webp"},
+            { title: "Planta Duplex - Superior",  area: "710m²", plantaImg: "/empreendimentos/VistaCyrelaMilano/planta9.webp"}
         ]
     },
     {
         fachada: "/empreendimentos/TheEditionByLivingVilaMariana/fachada.png",
+        images: [
+            "/empreendimentos/TheEditionByLivingVilaMariana/fachada.png",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto1.webp",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto2.webp",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto3.webp",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto4.webp",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto5.webp",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto6.webp",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto7.webp",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto8.webp",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto9.webp",
+            "/empreendimentos/TheEditionByLivingVilaMariana/foto10.webp",
+        ],
         id: 10,
         title: "The Edition By Living Vila Mariana",
         location: "Vila Mariana - Sao Paulo",
         type: "Residencial",
-        units: "70 unidades",
+        units: "96 unidades",
         status: "Em Construção",
         description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
         priceRange: "Valor - Pendente",
-        deliveryDate: "Dezembro 2025",
-        developer: "Construtora Premium SP",
-        address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        deliveryDate: "Dezembro 2026",
+        developer : "Cyrela",
+        address: "R. Cláudio Rossi, 189 - Vila Mariana, São Paulo - SP",
+        localizacao: "https://www.google.com/maps?q=R.%20Cláudio%20Rossi%2C%20189%20-%20Jardim%20da%20Gloria%2C%20São%20Paulo%20-%20SP&z=16&output=embed",
         details: {
-            area: "85m² a 140m²",
-            floors: "25 andares",
+            area: "63m² a 110m²",
+            floors: "15 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "1 a 2 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -372,9 +557,12 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Titulo", type: "3 dormitórios", area: "85m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "4 dormitórios", area: "120m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg"},
-            { title: "Titulo", type: "Cobertura", area: "140m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpeg" }
+            { title: "Planta Padrão", area: "87m²", plantaImg: "/empreendimentos/TheEditionByLivingVilaMariana/planta1.webp"},
+            { title: "Planta Opção", area: "87m²", plantaImg: "/empreendimentos/TheEditionByLivingVilaMariana/planta2.webp"},
+            { title: "Planta Padrão",  area: "106m²", plantaImg: "/empreendimentos/TheEditionByLivingVilaMariana/planta3.webp"},
+            { title: "Planta Opção",  area: "106m²", plantaImg: "/empreendimentos/TheEditionByLivingVilaMariana/planta4.webp"},
+            { title: "Planta Padrão",  area: "135m²", plantaImg: "/empreendimentos/TheEditionByLivingVilaMariana/planta5.webp"},
+            { title: "Planta Opção",  area: "135m²", plantaImg: "/empreendimentos/TheEditionByLivingVilaMariana/planta6.webp"}
         ]
     }
 ].map(e => ({ ...e, slug: gerarSlug(e.title) }));

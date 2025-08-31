@@ -106,11 +106,11 @@ const EmpreendimentoDetalhes = () => {
                   </div>
                 )}
 
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col sm:flex-row gap-3 w-full">
                   <Button 
                     size="lg" 
                     variant="outline" 
-                    className="w-full sm:h-12 flex-1 text-sm sm:text-base"
+                    className="w-full sm:w-auto sm:min-w-[200px] sm:h-12 flex-1 text-sm sm:text-base justify-center items-center"
                     onClick={() => openWhatsApp(empreendimentoSelecionado.title)}
                   >
                     <MessageCircle className="h-4 w-4 mr-2" />
@@ -130,7 +130,7 @@ const EmpreendimentoDetalhes = () => {
             {/* Floor Plans */}
             <Card className="lg:col-span-2">
               <CardHeader>
-                <CardTitle>Plantas e Preços</CardTitle>
+                <CardTitle>Plantas</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -142,7 +142,7 @@ const EmpreendimentoDetalhes = () => {
                         <div className="text-slate-600">{plan.area}</div>
                       </div>
                       <div className="text-right">
-                        <ImageModal imageUrl={plan.plantaImg} />
+                        <ImageModal imageUrl={plan.plantaImg} imageUrl2={ plan.plantaImg2}  />
                       </div>
                     </div>
                   ))}
@@ -200,10 +200,10 @@ const EmpreendimentoDetalhes = () => {
               <h3 className="text-lg sm:text-xl font-semibold mb-4">Pontos de Interesse</h3>
               <div className="space-y-2">
                 {[
-                  "Shopping Center - 5 min",
-                  "Estação de Metrô - 8 min",
-                  "Hospital - 10 min",
-                  "Universidade - 15 min"
+                  "Fácil acesso",
+                  "Gastronomia",
+                  "Shopping",
+                  "Educação"
                 ].map((point, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
@@ -214,12 +214,17 @@ const EmpreendimentoDetalhes = () => {
             </div>
             
             <div className="h-64 sm:h-80 bg-muted rounded-lg flex items-center justify-center">
-              <div className="text-sm sm:text-base text-slate-500">Mapa da Localização</div>
+              <div className="h-64 sm:h-80 w-full bg-muted rounded-lg overflow-hidden">
+                <iframe
+                  src={empreendimentoSelecionado.localizacao}
+                  className="w-full h-full"
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
