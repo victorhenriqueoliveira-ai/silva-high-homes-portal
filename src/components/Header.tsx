@@ -53,7 +53,7 @@ const Header = () => {
               <div className="text-xs text-slate-600">Corretor de Imóveis</div>
             </div>
             <div className="block sm:hidden">
-              <div className="font-bold text-slate-800 text-sm">Rafael Silva</div>
+              <div className="font-bold text-slate-800 text-sm">Ralph Santos</div>
             </div> */}
             <img
               src="/logotipo/logotipo.png"

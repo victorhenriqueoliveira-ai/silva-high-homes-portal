@@ -14,12 +14,12 @@ const Footer = () => {
                 <span className="text-white font-bold text-lg">RS</span>
               </div>
               <div>
-                <div className="font-bold text-lg">Rafael Silva</div>
+                <div className="font-bold text-lg">Ralph Santos</div>
                 <div className="text-sm text-slate-400">CRECI - 270870 - F</div>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Especialista em empreendimentos de alto padrão. Seu parceiro de confiança para os melhores investimentos imobiliários.
+              Especialista em empreendimentos médio e alto padrão. Seu parceiro de confiança para os melhores investimentos imobiliários.
             </p>
           </div>
 
@@ -69,8 +69,8 @@ const Footer = () => {
             <div className="flex space-x-4">
               {[
                 { icon: Instagram, href: "https://www.instagram.com/ralph_corretor", label: "Instagram" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: MessageCircle, href: "#", label: "WhatsApp" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/rafaelsdossantos/", label: "LinkedIn" },
+                { icon: MessageCircle, href: "", label: "WhatsApp" },
               ].map((social, index) => (
                 <a
                   key={index}
@@ -91,7 +91,7 @@ const Footer = () => {
 
         <div className="border-t border-slate-800 mt-12 pt-8 text-center">
           <p className="text-slate-400 text-sm">
-            © 2024 Rafael Silva - Corretor de Imóveis. Todos os direitos reservados.
+            © 2025 Ralph Santos - Corretor de Imóveis. Todos os direitos reservados.
           </p>
         </div>
       </div>

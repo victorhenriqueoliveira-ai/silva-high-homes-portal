@@ -176,7 +176,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ empreendimento }) => {
                     <FormControl>
                       <Input
                         inputMode="tel"
-                        placeholder="(11) 91234-5678"
+                        placeholder="(11) 99999-9999"
                         value={field.value as string}
                         onChange={(e) => field.onChange(formatPhoneBR(e.target.value))}
                       />

@@ -106,16 +106,16 @@ const EmpreendimentoDetalhes = () => {
                   </div>
                 )}
 
-                <div className="flex flex-col sm:flex-row gap-3 w-full">
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="w-full sm:w-auto sm:min-w-[200px] sm:h-12 flex-1 text-sm sm:text-base justify-center items-center"
-                    onClick={() => openWhatsApp(empreendimentoSelecionado.title)}
-                  >
-                    <MessageCircle className="h-4 w-4 mr-2" />
-                    WhatsApp
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-3 w-full">
+                    <Button 
+                      size="lg" 
+                      variant="outline" 
+                      className="w-full sm:w-auto sm:min-w-[200px] md:w-full h-12 text-sm sm:text-base justify-center items-center"
+                      onClick={() => openWhatsApp(empreendimentoSelecionado.title)}
+                    >
+                      <MessageCircle className="h-4 w-4 mr-2" />
+                      WhatsApp
+                    </Button>
                 </div>
               </div>
             </div>

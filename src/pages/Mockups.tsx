@@ -28,7 +28,8 @@ export const empreendimentos = [
         priceRange: "Valor de M² R$ 16.000,00",
         deliveryDate: "Novembro 2028",
         developer : "Cyrela",
-        address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
+        address: "R. Barão do Triunfo, 2017 - Campo Belo, São Paulo - SP",
+        localizacao: "https://www.google.com/maps?q=R.%20Barão%20do%20Triunfo%2C%202017%20-%20Campo%20Belo%2C%20São%20Paulo%20-%20SP&z=16&output=embed",
         details: {
             area: "149m² a 265m²",
             floors: "25 andares",
@@ -165,7 +166,7 @@ export const empreendimentos = [
         type: "Residencial",
         units: "57 Pavimentos",
         status: "Lançamento",
-        description: "A 210M DE ALTURA, UMA VISTA INFINITA PARA O VERDE.",
+        description: "O EPIC Jardim Europa é um projeto icônico que redefine o conceito de luxo em São Paulo.",
         features: ["Salas 40-200m²", "Coworking", "Heliponto", "Concierge 24h"],
         priceRange: "Valor de M² a partir de R$ 34.200,00",
         deliveryDate: "Julho 2030",
