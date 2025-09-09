@@ -183,7 +183,7 @@ const ContactForm = () => {
                           <FormControl>
                             <Input
                               inputMode="tel"
-                              placeholder="(11) 97151-1943"
+                              placeholder="(11) 99999-9999"
                               value={field.value as string}
                               onChange={(e) => field.onChange(formatPhoneBR(e.target.value))}
                             />

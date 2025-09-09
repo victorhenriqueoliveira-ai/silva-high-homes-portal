@@ -20,6 +20,7 @@ const Index = () => {
     status: dev.status,
     description: dev.description,
     features: dev.features,
+    priceRange: dev.priceRange,
   }));
 
   return (
@@ -87,10 +88,10 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
             {[
-              { icon: Home, number: "500+", label: "Imóveis Vendidos" },
-              { icon: Users, number: "300+", label: "Clientes Satisfeitos" },
-              { icon: Star, number: "6+", label: "Anos de Experiência" },
-              { icon: Award, number: "50+", label: "Empreendimentos" }
+              { icon: Home, number: "17+", label: "Imóveis Vendidos" },
+              { icon: Users, number: "50+", label: "Clientes Satisfeitos" },
+              { icon: Star, number: "4+", label: "Anos de Experiência" },
+              { icon: Award, number: "11+", label: "Empreendimentos" }
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <stat.icon className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-primary mx-auto mb-3 sm:mb-4" />
@@ -129,6 +130,7 @@ const Index = () => {
                   </div>
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
                     <h3 className="text-lg sm:text-xl font-bold">{dev.title}</h3>
+
                   </div>
                 </div>
                 
@@ -142,8 +144,11 @@ const Index = () => {
                   </CardDescription>
                 </CardHeader>
                 
-                <CardContent className="p-4 sm:p-6 pt-0">
+                <CardContent className="p-2 sm:p-6 pt-0">
                   <div className="space-y-3">
+                    <div className="text-lg font-bold text-primary">
+                      {dev.priceRange}
+                    </div>
                     <div className="text-sm text-slate-600 font-medium">{dev.units}</div>
                     <div className="flex flex-wrap gap-2">
                       {dev.features.slice(0, 2).map((feature, index) => (
@@ -187,7 +192,7 @@ const Index = () => {
                 Especialista em Imóveis de Alto Padrão
               </h2>
               <p className="text-base sm:text-lg text-slate-300 mb-4 sm:mb-6">
-                Com grande experiência no mercado imobiliário, Rafael Silva é referência em empreendimentos de alto em São Paulo. Especializado em conectar investidores e compradores aos melhores projetos da cidade.
+                Com grande experiência no mercado imobiliário, Ralph Santos é referência em empreendimentos médio e alto em São Paulo. Especializado em conectar investidores e compradores aos melhores projetos da cidade.
               </p>
               <div className="space-y-3 sm:space-y-4">
                 {[
@@ -213,10 +218,10 @@ const Index = () => {
             <div className="relative order-first lg:order-last">
               {/* <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg shadow-2xl bg-gradient-to-r from-primary to-[#C69755]"></div>
               <div className="absolute inset-0 bg-black/20 rounded-lg"></div> */}
-              <img src='/logotipo/foto_rafael_horizontal.png' alt="Rafael Silva" className="w-full h-full object-cover rounded-2xl" />
+              <img src='/logotipo/foto_rafael_horizontal.png' alt="Ralph Santos" className="w-full h-full object-cover rounded-2xl" />
               <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6">
-                <h3 className="text-primary text-xl sm:text-2xl font-bold">Rafael Silva</h3>
-                <h3 className="text-[#9e7a51] text-sm sm:text-base text-white/80">CRECI - 270870 - F</h3>
+                <h3 className="text-primary text-xl sm:text-2xl font-bold">Ralph Santos</h3>
+                <h3 className="text-[#9e7a51] text-sm sm:text-base text-primary/80">CRECI - 270870 - F</h3>
               </div>
             </div>
           </div>
