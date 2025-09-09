@@ -70,7 +70,6 @@ const Footer = () => {
               {[
                 { icon: Instagram, href: "https://www.instagram.com/ralph_corretor", label: "Instagram" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/rafaelsdossantos/", label: "LinkedIn" },
-                { icon: MessageCircle, href: "", label: "WhatsApp" },
               ].map((social, index) => (
                 <a
                   key={index}

@@ -15,7 +15,7 @@ const Sobre = () => {
 
   const achievements = [
     { icon: Award, title: "Top Performer", description: "Performance reconhecida" },
-    { icon: Users, title: "300+ Clientes", description: "Famílias satisfeitas atendidas" },
+    { icon: Users, title: "50+ Clientes", description: "Famílias satisfeitas atendidas" },
     { icon: TrendingUp, title: "17 projetos concluídos", description: "Resultados consistentes" },
     { icon: Heart, title: "100% Satisfação", description: "Taxa de clientes satisfeitos" }
   ];
