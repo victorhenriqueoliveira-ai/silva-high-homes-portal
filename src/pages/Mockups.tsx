@@ -25,7 +25,7 @@ export const empreendimentos = [
         status: "No lançamento", 
         description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada em uma área nobre da cidade.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2 vagas", "Área de lazer completa"],
-        priceRange: "Valor de M² R$ 16.000,00",
+        priceRange: "Valor de M² a partir de R$ 16.000,00",
         deliveryDate: "Novembro 2028",
         developer : "Cyrela",
         address: "R. Barão do Triunfo, 2017 - Campo Belo, São Paulo - SP",
@@ -43,7 +43,7 @@ export const empreendimentos = [
             { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
         ],
         floorPlans: [
-            { title: "Planta Padrão", type: "3 Suítes| Cozinha integrada e WC de serviço | 2 Vagas", area: "146m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpg" },
+            { title: "Planta Padrão", type: "3 Suítes| Cozinha integrada e WC de serviço | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta1.jpg" },
             { title: "Planta Opção", type: "3 Suítes| Cozinha integrada e despensa | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta2.jpg" },
             { title: "Planta Opção", type: "3 Suítes| Cozinha fechada e despensa | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/BoutiqueByLivingCampoBelo/planta3.jpg" },
             { title: "Planta Opção", type: "4 Dormitórios | Cozinha integrada e WC de serviço | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/BoutiqueByLivingIpiranga/planta4.jpg" },
@@ -167,7 +167,7 @@ export const empreendimentos = [
         units: "57 Pavimentos",
         status: "Lançamento",
         description: "O EPIC Jardim Europa é um projeto icônico que redefine o conceito de luxo em São Paulo.",
-        features: ["Salas 40-200m²", "Coworking", "Heliponto", "Concierge 24h"],
+        features: ["Salas 339 a 400m²", "Concierge 24h"],
         priceRange: "Valor de M² a partir de R$ 34.200,00",
         deliveryDate: "Julho 2030",
         developer : "Cyrela",
