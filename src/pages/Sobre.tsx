@@ -83,7 +83,7 @@ const Sobre = () => {
                 Corretor de Imóveis Especializado • CRECI - 270870 - F
               </div>
               <p className="text-lg md:text-xl leading-relaxed mb-8">
-                Mais de 2 anos dedicados ao mercado imobiliário médio e alto padrão, conectando pessoas aos seus sonhos e investidores às melhores oportunidades.
+                Com sólida experiência no mercado imobiliário de médio e alto padrão, atuo conectando pessoas aos seus sonhos e investidores às melhores oportunidades.
               </p>
             </div>
             
