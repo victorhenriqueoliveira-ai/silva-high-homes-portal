@@ -34,8 +34,15 @@ export const empreendimentos = [
             area: "149m² a 265m²",
             floors: "25 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "1 a 2 vagas por unidade"
+            parking: "2 vagas por unidade"
         },
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Shopping",
+            "Educação",
+            "Metrô"
+        ],
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
             { icon: Car, name: "Valet parking", description: "Serviço de manobrista 24h" },
@@ -96,15 +103,21 @@ export const empreendimentos = [
         description: "Torres residenciais com conceito sustentável e design contemporâneo em um dos bairros mais nobres.",
         features: ["2-3 dormitórios", "Terraço privativo", "1-2 vagas", "Spa e fitness"],
         priceRange: "Valor de M² a partir de R$ 48.700,00",
-        deliveryDate: "Junho 2029",
+        deliveryDate: "Julho 2029",
         developer : "Cyrela",
-        address: "Rua São Cassiano, Jardim Guedala, São Paulo - SP",
+        address: "Rua São Cassiano, 11 , Jardim Guedala, São Paulo - SP",
         localizacao: "https://www.google.com/maps?q=Rua%20S%C3%A3o%20Cassiano%2C%20Jardim%20Guedala%2C%20S%C3%A3o%20Paulo%20-%20SP&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Shopping",
+            "Educação"
+        ],
         details: {
             area: "464,50m² a 883,50m²",
-            floors: "55 andares",
+            floors: "52 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "4 a 6 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -164,7 +177,7 @@ export const empreendimentos = [
         title: "EPIC Jardim Europa Design By PENINFARINA",
         location: "Jardim Europa - São Paulo",
         type: "Residencial",
-        units: "57 Pavimentos",
+        units: "48 Pavimentos",
         status: "Lançamento",
         description: "O EPIC Jardim Europa é um projeto icônico que redefine o conceito de luxo em São Paulo.",
         features: ["Salas 339 a 400m²", "Concierge 24h"],
@@ -172,6 +185,14 @@ export const empreendimentos = [
         deliveryDate: "Julho 2030",
         developer : "Cyrela",
         address: "R. Joaquim Antunes, 377 - Jardim Europa, São Paulo - SP",
+        localizacao: "https://www.google.com/maps?q=R.%20Joaquim%20Antunes%2C%20377%20-%20Jardim%20Europa%2C%20São%20Paulo%20-%20SP&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Shopping",
+            "Educação",
+            "Metrô"
+        ],
         details: {
             area: "Apartamentos de 339 a 400m² - Penthouses de 536 a 637m²",
             floors: "57 andares",
@@ -229,11 +250,17 @@ export const empreendimentos = [
         developer : "Cyrela",
         address: "Rua dos Exemplos, 123 - Centro, São Paulo - SP",
         localizacao: "https://www.google.com/maps?q=Av.%20Nazaré%2C%201616%20-%20Ipiranga%2C%20São%20Paulo%20-%20SP&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Educação",
+            "Metrô"
+        ],
         details: {
-            area: "137m² a 156m²",
-            floors: "23 andares",
+            area: "137m² e 156m²",
+            floors: "25 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "2 a 3 vagas por unidade"
+            parking: "2 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -278,18 +305,23 @@ export const empreendimentos = [
         title: "ARQ Mooca By Living",
         location: "Mooca - São Paulo",
         type: "Residencial",
-        units: "214 unidades",
+        units: "161 unidades",
         status: "Em construção",
         description: "Edifício inteligente com certificação sustentável na principal avenida corporativa de São Paulo.",
         features: ["Salas 30-300m²", "Automação total", "Terraço corporativo", "Estacionamento robótico"],
         priceRange: "Valor de M² a partir de R$ 12.900,00",
         deliveryDate: "Maio 2026",
         developer : "Cyrela",
-        address: "Rua Padre Raposo, 100 - Mooca - São Paulo, SP",
-        localizacao: "https://www.google.com/maps?q=Rua%20Padre%20Raposo%2C%20100%20-%20Mooca%2C%20São%20Paulo%2C%20SP&z=16&output=embed",
+        address: "Rua Padre Raposo, 610 - Mooca - São Paulo, SP",
+        localizacao: "https://www.google.com/maps?q=Rua%20Padre%20Raposo%2C%20610%20-%20Mooca%2C%20São%20Paulo%2C%20SP&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Educação",
+        ],
         details: {
             area: "71m² a 120m²",
-            floors: "24 andares",
+            floors: "21 andares",
             unitsPerFloor: "4 a 6 unidades",
             parking: "1 a 2 vagas por unidade"
         },
@@ -304,7 +336,7 @@ export const empreendimentos = [
             { title: "Planta Padrão", type: "3 Dormitórios | 1 Suíte com 1 vaga", area: "82m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta2.png"},
             { title: "Planta Opção", type: "2 Suítes | 1 vaga", area: "82m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta3.png"},
             { title: "Planta Padrão", type: "3 Suítes | 2 Vagas", area: "120m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta4.png"},
-            { title: "Planta Opção", type: "4 Dormitórios | 2 Suítes | 2 Vagas", area: "156m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta5.png"},
+            { title: "Planta Opção", type: "4 Dormitórios | 2 Suítes | 2 Vagas", area: "120m²", plantaImg: "/empreendimentos/ARQMoocaByLiving/planta5.png"},
         ]
     },
     {
@@ -329,17 +361,25 @@ export const empreendimentos = [
         title: "Living Unique Saúde",
         location: "Saúde - São Paulo",
         type: "Residencial",
-        units: "168 unidades",
+        units: "175 unidades",
         status: "Em construção",
         description: "Condomínio sustentável com conceito biofílico e soluções ecológicas inovadoras.",
         features: ["2-4 dormitórios", "Jardim vertical", "2 vagas", "Horta comunitária"],
         priceRange: "Valor de M² a partir de R$ 13.840,00",
-        deliveryDate: "Outubro 2025",
+        deliveryDate: "Novembro 2025",
         developer : "Cyrela",
         address: "Avenida Afonso Mariano Fagundes, 417 - Saúde - São Paulo, SP",
+        localizacao : "https://www.google.com/maps?q=Avenida%20Afonso%20Mariano%20Fagundes%2C%20417%20-%20Sa%C3%BAde%20-%20S%C3%A3o%20Paulo%2C%20SP&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Shopping",
+            "Educação",
+            "Metrô"
+        ],
         details: {
             area: "67m² a 125m²",
-            floors: "17 andares",
+            floors: "18 andares",
             unitsPerFloor: "4 a 6 unidades",
             parking: "1 a 2 vagas por unidade"
         },
@@ -377,7 +417,7 @@ export const empreendimentos = [
         title: "The Residence Brooklin By Living",
         location: "Vila Mariana - Sao Paulo",
         type: "Residencial",
-        units: "84 unidades",
+        units: "168 unidades",
         status: "Lançamento",
         description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
@@ -386,8 +426,15 @@ export const empreendimentos = [
         developer : "Cyrela",
         address: "R. Indiana, 74 - Brooklin",
         localizacao : "https://www.google.com/maps?q=R.%20Indiana%2C%2074%20-%20Brooklin%2C%20São%20Paulo%2C%20SP&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Shopping",
+            "Educação",
+            "Metrô"
+        ],
         details: {
-            area: "64m² a 120m²",
+            area: "71m² a 127m²",
             floors: "17 andares",
             unitsPerFloor: "4 a 6 unidades",
             parking: "1 a 2 vagas por unidade"
@@ -404,7 +451,7 @@ export const empreendimentos = [
             { title: "Planta Opção", type: "2 Suítes | 1 Vaga", area: "71m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta2.png"},
             { title: "Planta Padrão", type: "2 Suítes | 1 Vaga", area: "88m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta3.png"},
             { title: "Planta Opção", type: "3 Dormitórios | 1 Suítes | 1 Vagas", area: "88m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta4.png"},
-            { title: "Planta Padrão", type: "3 Suítes | 2 Vagas", area: "111m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta5.png"},
+            { title: "Planta Padrão", type: "3 Suítes | 2 Vagas", area: "127m²", plantaImg: "/empreendimentos/TheResidenceBrooklinByLiving/planta5.png"},
         ]
     },
     {
@@ -428,7 +475,7 @@ export const empreendimentos = [
         title: "Brooklin SENSES BY CYRELA",
         location: "Brooklin - Sao Paulo",
         type: "Residencial",
-        units: "144 unidades",
+        units: "134 unidades",
         status: "Lançamento",
         description: "Com localização privilegiada próximo a shoppings como JK Iguatemi, Market Place, Morumbi e Vila Olímpia, o Brooklin é um dos bairros mais nobres da Zona Sul, e também sedia um dos pólos empresariais da cidade, em volta da Av. Berrini, além de fácil acesso à Av. Santo Amaro.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
@@ -437,11 +484,18 @@ export const empreendimentos = [
         developer : "Cyrela",
         address: "R. Michigan, 922 - Brooklin - Sao Paulo, SP",
         localizacao : "https://www.google.com/maps?q=R.%20Michigan%2C%20922%20-%20Brooklin%2C%20São%20Paulo%20-%20SP%2C%2004566-001&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Shopping",
+            "Educação",
+            "Metrô"
+        ],
         details: {
             area: "145m² a 178m²",
-            floors: "27 andares",
+            floors: "37 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "1 a 2 vagas por unidade"
+            parking: "2 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -484,7 +538,7 @@ export const empreendimentos = [
         title: "VISTA CYRELA - Milano",
         location: "Jardim Everest - Sao Paulo",
         type: "Residencial",
-        units: "50 apartamentos exclusivos",
+        units: "100 unidades exclusivas",
         status: "Lançamento",
         description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
@@ -493,11 +547,17 @@ export const empreendimentos = [
         developer : "Cyrela",
         address: "Av. Lopes de Azevedo, 46 - Jardim Guedala, São Paulo - SP",
         localizacao: "https://www.google.com/maps?q=Av.%20Lopes%20de%20Azevedo%2C%2046%20-%20Jardim%20Guedala%2C%20São%20Paulo%20-%20SP&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Shopping",
+            "Educação"
+        ],
         details: {
             area: "348m² a 710m²",
-            floors: "27 andares",
+            floors: "54 andares",
             unitsPerFloor: "4 a 6 unidades",
-            parking: "4 a 6 vagas por unidade"
+            parking: "4 a 5 vagas por unidade"
         },
         amenities: [
             { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
@@ -536,7 +596,7 @@ export const empreendimentos = [
         title: "The Edition By Living Vila Mariana",
         location: "Vila Mariana - Sao Paulo",
         type: "Residencial",
-        units: "96 unidades",
+        units: "90 unidades",
         status: "Em construção",
         description: "Apartamentos de alto padrão com acabamentos luxuosos e localização privilegiada.",
         features: ["3-4 dormitórios", "Varanda gourmet", "2-3 vagas", "Área de lazer completa"],
@@ -545,8 +605,14 @@ export const empreendimentos = [
         developer : "Cyrela",
         address: "R. Cláudio Rossi, 189 - Vila Mariana, São Paulo - SP",
         localizacao: "https://www.google.com/maps?q=R.%20Cláudio%20Rossi%2C%20189%20-%20Jardim%20da%20Gloria%2C%20São%20Paulo%20-%20SP&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Gastronomia",
+            "Educação",
+            "Metrô"
+        ],
         details: {
-            area: "63m² a 110m²",
+            area: "87m² a 135m²",
             floors: "15 andares",
             unitsPerFloor: "4 a 6 unidades",
             parking: "1 a 2 vagas por unidade"
