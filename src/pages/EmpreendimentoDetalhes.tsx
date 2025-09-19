@@ -199,11 +199,7 @@ const EmpreendimentoDetalhes = () => {
               
               <h3 className="text-lg sm:text-xl font-semibold mb-4">Pontos de Interesse</h3>
               <div className="space-y-2">
-                {[
-                  "Fácil acesso",
-                  "Gastronomia",
-                  "Shopping",
-                  "Educação"
+                {[...(empreendimentoSelecionado.pontos || [])
                 ].map((point, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
