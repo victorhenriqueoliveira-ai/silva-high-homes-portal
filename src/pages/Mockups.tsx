@@ -631,5 +631,61 @@ export const empreendimentos = [
             { title: "Planta Padrão",  area: "135m²", plantaImg: "/empreendimentos/TheEditionByLivingVilaMariana/planta5.webp"},
             { title: "Planta Opção",  area: "135m²", plantaImg: "/empreendimentos/TheEditionByLivingVilaMariana/planta6.webp"}
         ]
-    }
+    },
+    {
+        id: 11,
+        fachada: "/empreendimentos/Mediterraneo/fachada.png",
+        images: [
+            "/empreendimentos/Mediterraneo/fachada.png",
+            "/empreendimentos/Mediterraneo/foto1.png",
+            "/empreendimentos/Mediterraneo/foto2.png",
+            "/empreendimentos/Mediterraneo/foto3.png",
+            "/empreendimentos/Mediterraneo/foto4.png",
+            "/empreendimentos/Mediterraneo/foto5.png",
+            "/empreendimentos/Mediterraneo/foto6.png",
+            "/empreendimentos/Mediterraneo/foto7.png",
+            "/empreendimentos/Mediterraneo/foto8.png",
+            "/empreendimentos/Mediterraneo/foto9.png",
+            "/empreendimentos/Mediterraneo/foto10.png",
+        ],
+        title: "Mediterranée By Living",
+        location: "Avenida Mascote - São Paulo",
+        type: "Residencial",
+        units: "205 unidades residenciais + 36 studios",
+        status: "Lançamento",
+        description: "Empreendimento completo com torres residenciais e studios, lazer sofisticado e diversas opções de plantas.",
+        features: ["Studios de 22m² a 35m²", "Apartamentos de 76m² a 149m²", "Até 3 suítes", "Lazer completo"],
+        priceRange: "Valor de M² a partir de R$12.600",
+        deliveryDate: "Maio de 2029",
+        developer: "Living",
+        address: "Avenida Mascote, nº 1171 – São Paulo – SP",
+        localizacao: "https://www.google.com/maps?q=Avenida%20Mascote%2C%201171%20-%20S%C3%A3o%20Paulo%20-%20SP&z=16&output=embed",
+        pontos: [
+            "Fácil acesso",
+            "Amplo lazer",
+            "Studios e apartamentos",
+            "Garagem com vagas especiais"
+        ],
+        details: {
+            area: "22m² a 149m²",
+            floors: "Torre A: 20 pavimentos | Torre B: 22 pavimentos",
+            unitsPerFloor: "Torre A: 4 unidades | Torre B: 6 unidades",
+            parking: "Studios: Sem vagas | Apartamentos: 1 a 2 vagas por unidade"
+        },
+        amenities: [
+            { icon: Dumbbell, name: "Academia completa", description: "Equipamentos modernos e personal trainer" },
+            { icon: Car, name: "Valet parking", description: "Serviço de manobrista 24h" },
+            { icon: Shield, name: "Segurança 24h", description: "Portaria e monitoramento integral" },
+            { icon: Star, name: "Concierge", description: "Serviços exclusivos para moradores" }
+        ],
+        floorPlans: [
+            { title: "Planta Padrão", type: " 2 Suítes | 1 Vaga", area: "76m²", plantaImg: "/empreendimentos/Mediterraneo/planta1.png"},
+            { title: "Sugestão de decoração", type: " 2 Suítes | 1 Vaga", area: "89m²", plantaImg: "/empreendimentos/Mediterraneo/planta2.png"},
+            { title: "Planta Padrão", type: " 2 Suítes | 1 Vagas", area: "89m²", plantaImg: "/empreendimentos/Mediterraneo/planta3.png"},
+            { title: "Planta Opção", type: "3 Dormitórios | 1 Suíte | 1 Vaga", area: "89m²", plantaImg: "/empreendimentos/Mediterraneo/planta4.png"},
+            { title: "Planta Padrão", type: "3 Suítes | Cozinha integrada e WC de serviço | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/Mediterraneo/planta5.png"},
+            { title: "Planta Opção", type: "4 Dormitórios | 2 Suítes | Cozinha fechada | Despensa | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/Mediterraneo/planta6.png"},
+            { title: "Planta Decorado", type: " 3 Suítes | Cozinha Integrada | Despensa | 2 Vagas", area: "149m²", plantaImg: "/empreendimentos/Mediterraneo/planta7.png"},
+        ]
+    },
 ].map(e => ({ ...e, slug: gerarSlug(e.title) }));
