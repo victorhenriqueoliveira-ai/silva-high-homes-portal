@@ -61,7 +61,7 @@ const Index = () => {
             </h1>
           </div>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto text-white/90 px-4">
-            Especialista em empreendimentos de alto padrão. Conectando você ao seu próximo investimento de sucesso.
+            Especialista em empreendimentos de médio e alto padrão. Conectando você ao seu próximo investimento de sucesso.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto">
