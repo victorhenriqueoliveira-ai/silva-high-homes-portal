@@ -18,16 +18,37 @@ export const trackWhatsAppClick = async (empreendimento?: string) => {
   }
 };
 
-export const openWhatsApp = async (empreendimento?: string) => {
-  // Track the click
-  await trackWhatsAppClick(empreendimento);
-  
-  // Create the message
+export const openWhatsApp = (empreendimento?: string) => {
   const message = empreendimento 
     ? `Olá! Vim pelo site e estou interessado no empreendimento ${empreendimento}.`
     : 'Olá! Vim pelo site e gostaria de mais informações.';
-  
-  // Open WhatsApp with the message
+
   const whatsappUrl = `https://wa.me/5511971511943?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, '_blank');
+
+  // Detecta se é mobile
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  // Faz o tracking (sem bloquear o redirecionamento)
+  try {
+    trackWhatsAppClick(empreendimento)
+      .catch(console.error)
+      .finally(() => {
+        setTimeout(() => {
+          if (isMobile) {
+            // 📱 Mobile → abre direto (chama app do WhatsApp)
+            window.location.href = whatsappUrl;
+          } else {
+            // 💻 Desktop → abre nova guia
+            window.open(whatsappUrl, '_blank');
+          }
+        }, 200);
+      });
+  } catch {
+    // Fallback
+    if (isMobile) {
+      window.location.href = whatsappUrl;
+    } else {
+      window.open(whatsappUrl, '_blank');
+    }
+  }
 };
