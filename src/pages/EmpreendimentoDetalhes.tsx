@@ -114,7 +114,7 @@ const EmpreendimentoDetalhes = () => {
                       onClick={() => openWhatsApp(empreendimentoSelecionado.title)}
                     >
                       <MessageCircle className="h-4 w-4 mr-2" />
-                      WhatsApp
+                      Consultar valores pelo WhatsApp
                     </Button>
                 </div>
               </div>
